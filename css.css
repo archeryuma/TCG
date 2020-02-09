@@ -1,0 +1,115 @@
+/*定義・宣言*/
+:root{
+  --nocolor: transparent;
+  --backgroundcolor: black;
+  --maincolor: white;
+}
+*{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  color: var(--maincolor);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.5vw;
+}
+
+/*全体設定*/
+body {
+  width: 100%;
+  height: 62.5vw;
+  max-height: 100%;
+  max-width: 160vh;
+  background-color: var(--backgroundcolor);
+}
+.areacol {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 20% 1fr 20%;
+  background-color: var(--nocolor);
+}
+.areacol *{ /*仮*/
+  border: 0.5px var(--maincolor) solid;
+  box-sizing: border-box;
+}
+.myarea{/*左エリア*/
+  display: grid;
+  grid-template-rows: 10% 1fr 15%;
+}
+.mainarea{/*中央*/
+  display: grid;
+  grid-template-rows: 10% 4% 1fr 4% 20%;
+}
+.enearea{/*右*/
+  display: grid;
+  grid-template-rows: 15% 1fr 20%;
+}
+
+/*左エリア*/
+.option{
+  display: grid;
+}
+.mydata{
+  
+}
+.mydata p,.enedata p{
+  height: 1em;
+  border: 0;
+}
+.mylog{
+  
+}
+.myselect{
+  
+}
+/*中央エリア*/
+.enedeck{
+
+}
+.alllog{
+  height: 100%;
+  background-color: var(--nocolor);
+  padding: 1.5%;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+.mydeck{
+  overflow-x: scroll;
+  display: grid;
+  grid-template-columns: repeat(15, 10%);
+}
+/*右エリア*/
+.enedata{
+  display: grid;
+}
+.enelog{
+  display: grid;
+}
+.playarea{
+  display: grid;
+  grid-template-columns: 1fr 65%;
+}
+.cparea{
+  text-align: center;
+  font-size: 5vw;
+  /* position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  margin: auto; */
+}
+.playbutton{
+
+}
+
+/*カード*/
+.mycard{
+  /* height: 90%; */
+  width: 8vw;
+  background-color: red;
+}
+/* .mycard:hover {
+  transform: translateY(-10%);
+} */
+#mycard03{
+  background-color: aqua;
+}
