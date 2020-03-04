@@ -1,10 +1,14 @@
-/*定義・宣言*/
-:root{
-  --nocolor: transparent;
+:root {
   --backgroundcolor: black;
   --maincolor: white;
+  --margin: 1.5%;
+  --padding: 1.5%;
+  --cardradius: 10%;
+  --mydeckcards: 15;
+  --enedeckcards: 15;
 }
-*{
+
+* {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -12,104 +16,329 @@
   position: relative;
   color: var(--maincolor);
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: 1.5vw;
 }
 
-/*全体設定*/
 body {
   width: 100%;
   height: 62.5vw;
   max-height: 100%;
   max-width: 160vh;
-  background-color: var(--backgroundcolor);
-}
-.areacol {
-  box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 20% 1fr 20%;
-  background-color: var(--nocolor);
-}
-.areacol *{ /*仮*/
-  border: 0.5px var(--maincolor) solid;
-  box-sizing: border-box;
-}
-.myarea{/*左エリア*/
-  display: grid;
-  grid-template-rows: 10% 1fr 15%;
-}
-.mainarea{/*中央*/
-  display: grid;
-  grid-template-rows: 10% 4% 1fr 4% 20%;
-}
-.enearea{/*右*/
-  display: grid;
-  grid-template-rows: 15% 1fr 20%;
+  background: var(--backgroundcolor);
+  background-size: 100% 100%;
+  margin: auto;
 }
 
-/*左エリア*/
-.option{
+body .areacol {
+  font-size: 2vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% 1fr 20%;
+      grid-template-columns: 20% 1fr 20%;
+}
+
+body .areacol::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/background-digital.jpg");
+  background-size: 100% 100%;
+  -webkit-filter: grayscale(60%);
+          filter: grayscale(60%);
+}
+
+.myarea {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 10% 1fr 17%;
+      grid-template-rows: 10% 1fr 17%;
+}
+
+.myarea .option {
+  width: auto;
+  height: auto;
+  margin: 0 var(--margin) var(--margin) 0;
+  padding: var(--padding);
+  display: -ms-grid;
   display: grid;
 }
-.mydata{
-  
+
+.myarea .mylog {
+  width: auto;
+  height: auto;
+  margin: var(--margin) var(--margin) 0 0;
+  border: 0.5px var(--maincolor) solid;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 10% 1fr;
+      grid-template-rows: 10% 1fr;
+      grid-template-areas: "times effects" "contents contents";
 }
-.mydata p,.enedata p{
+
+.myarea .mylog .timestabs {
+  border: 0.5px var(--maincolor) solid;
+  text-align: center;
+}
+
+.myarea .mylog .timestabs::before {
+  content: 'times';
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+.myarea .mylog .effectstabs {
+  border: 0.5px var(--maincolor) solid;
+  text-align: center;
+}
+
+.myarea .mylog .effectstabs::before {
+  content: 'effects';
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+.myarea .mylog input[name='mytabs'] {
+  display: none;
+}
+
+.myarea .mylog .logcontent {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: contents;
+  display: none;
+  padding: var(--padding);
+  clear: both;
+  overflow: hidden;
+}
+
+.myarea .mylog #mytimes:checked ~ #mytimescontent,
+.myarea .mylog #myeffects:checked ~ #myeffectscontent {
+  display: block;
+}
+
+.myarea .mylog input:checked + .timestabs,
+.myarea .mylog input:checked + .effectstabs {
+  border-bottom: none;
+}
+
+.myarea .mydata {
+  width: auto;
+  height: auto;
+  margin: 0 var(--margin) 0 0;
+  padding: var(--padding);
+  border: 0.5px var(--maincolor) solid;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.myarea .mydata p {
   height: 1em;
   border: 0;
 }
-.mylog{
-  
-}
-.myselect{
-  
-}
-/*中央エリア*/
-.enedeck{
 
+.mainarea {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 10% 4% 1fr 4% 20%;
+      grid-template-rows: 10% 4% 1fr 4% 20%;
 }
-.alllog{
-  height: 100%;
-  background-color: var(--nocolor);
-  padding: 1.5%;
-  box-sizing: border-box;
+
+.mainarea .enedeck {
+  width: auto;
+  height: auto;
+  margin: 0 var(--margin) var(--margin) var(--margin);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (calc(100%/var(--enedeckcards)))[var];
+      grid-template-columns: repeat(var(--enedeckcards), calc(100%/var(--enedeckcards)));
+}
+
+.mainarea .enedeck .enecard {
+  width: 130%;
+  border-radius: 0 0 var(--cardradius) var(--cardradius);
+  background-color: #646464;
+  border: 0.5px var(--maincolor) solid;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mainarea .enedeck #enecard05 {
+  background-color: greenyellow;
+}
+
+.mainarea .alllog {
+  width: auto;
+  height: auto;
+  margin: var(--margin);
+  padding: var(--padding);
+  border: 0.5px var(--maincolor) solid;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-x: hidden;
   overflow-y: scroll;
 }
-.mydeck{
+
+.mainarea .mydeck {
+  width: auto;
+  height: auto;
+  margin: var(--margin) var(--margin) 0 var(--margin);
   overflow-x: scroll;
+  overflow-y: hidden;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(15, 10%);
-}
-/*右エリア*/
-.enedata{
-  display: grid;
-}
-.enelog{
-  display: grid;
-}
-.playarea{
-  display: grid;
-  grid-template-columns: 1fr 65%;
-}
-.cparea{
-  text-align: center;
-  font-size: 5vw;
-  /* position: absolute;
-  top: 0; bottom: 0; left: 0; right: 0;
-  margin: auto; */
-}
-.playbutton{
-
+  -ms-grid-columns: (10%)[var];
+      grid-template-columns: repeat(var(--mydeckcards), 10%);
 }
 
-/*カード*/
-.mycard{
-  /* height: 90%; */
-  width: 8vw;
-  background-color: red;
+.mainarea .mydeck .mycard {
+  width: 150%;
+  border-radius: var(--cardradius) var(--cardradius) 0 0;
+  background-color: #646464;
+  border: 0.5px var(--maincolor) solid;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
-/* .mycard:hover {
-  transform: translateY(-10%);
-} */
-#mycard03{
+
+.mainarea .mydeck #mycard03 {
   background-color: aqua;
 }
+
+.enearea {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 17% 1fr 20%;
+      grid-template-rows: 17% 1fr 20%;
+}
+
+.enearea .enedata {
+  width: auto;
+  height: auto;
+  margin: 0 0 0 var(--margin);
+  padding: var(--padding);
+  border: 0.5px var(--maincolor) solid;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.enearea .enedata p {
+  height: 1em;
+  border: 0;
+}
+
+.enearea .enelog {
+  width: auto;
+  height: auto;
+  margin: 0 0 var(--margin) var(--margin);
+  border: 0.5px var(--maincolor) solid;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 12% 1fr;
+      grid-template-rows: 12% 1fr;
+      grid-template-areas: "times effects" "contents contents";
+}
+
+.enearea .enelog .timestabs {
+  border: 0.5px var(--maincolor) solid;
+  text-align: center;
+}
+
+.enearea .enelog .timestabs::before {
+  content: 'times';
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+.enearea .enelog .effectstabs {
+  border: 0.5px var(--maincolor) solid;
+  text-align: center;
+}
+
+.enearea .enelog .effectstabs::before {
+  content: 'effects';
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+.enearea .enelog input[name='enetabs'] {
+  display: none;
+}
+
+.enearea .enelog .logcontent {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: contents;
+  display: none;
+  padding: var(--padding);
+  clear: both;
+  overflow: hidden;
+}
+
+.enearea .enelog #enetimes:checked ~ #enetimescontent,
+.enearea .enelog #eneeffects:checked ~ #eneeffectscontent {
+  display: block;
+}
+
+.enearea .enelog input:checked + .timestabs,
+.enearea .enelog input:checked + .effectstabs {
+  border-bottom: none;
+}
+
+.enearea .playarea {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 65%;
+      grid-template-columns: 1fr 65%;
+}
+
+.enearea .playarea .cparea {
+  padding: var(--padding);
+  text-align: center;
+  font-size: 4vw;
+}
+
+.enearea .playarea .playbutton {
+  width: auto;
+  height: auto;
+  margin: var(--margin);
+  padding: var(--padding);
+  border-radius: 50%;
+  background-color: red;
+  border: 5px var(--maincolor) solid;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  font-size: 4vw;
+}
+
+.enearea .playarea .playbutton::before {
+  content: 'play';
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+.mylog, .mydata, .alllog, .enedata, .enelog {
+  background: var(--backgroundcolor);
+}
+/*# sourceMappingURL=css.css.map */
