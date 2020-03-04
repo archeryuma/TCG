@@ -189,6 +189,25 @@ body #areacol::before {
   overflow-y: scroll;
 }
 
+#mainarea #log #mylog {
+  width: 50%;
+  height: auto;
+  position: absolute;
+}
+
+#mainarea #log #enelog {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+#mainarea #log #commonlog {
+  height: auto;
+  position: absolute;
+}
+
 #mainarea #mydeck {
   width: auto;
   height: auto;

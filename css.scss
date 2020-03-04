@@ -153,6 +153,21 @@ body {//全体設定
     box-sizing: border-box;
     overflow-x: hidden;
     overflow-y: scroll;
+    #mylog{
+      width: 50%;
+      height: auto;
+      position: absolute;
+    }
+    #enelog{
+      width: 50%;
+      height: auto;
+      position: absolute;
+      transform: translateX(100%);
+    }
+    #commonlog{
+      height: auto;
+      position: absolute;
+    }
   }
 
   #mydeck{
