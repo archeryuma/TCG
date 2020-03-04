@@ -6,6 +6,19 @@
   --cardradius: 10%;
   --mydeckcards: 15;
   --enedeckcards: 15;
+  --mynowhp: 56789;
+  --enenowhp: 34567;
+  --hpcolor1: rgb(255, 0, 0);
+  --hpcolor2: rgb(255, 100, 0);
+  --hpcolor3: rgb(255, 200, 0);
+  --hpcolor4: rgb(255, 255, 0);
+  --hpcolor5: rgb(100, 255, 100);
+  --hpcolor6: rgb(0, 255, 255);
+  --hpcolor7: rgb(0, 100, 255);
+  --hpcolor8: rgb(100, 50, 150);
+  --hpcolor9: rgb(200, 200, 200);
+  --hpcolor10: rgb(100, 100, 100);
+  --hpcolor11: rgb(50, 50, 50);
 }
 
 * {
@@ -69,7 +82,7 @@ body #areacol::before {
   width: auto;
   height: auto;
   margin: var(--margin) var(--margin) 0 0;
-  border: 0.5px var(--maincolor) solid;
+  border: 1px var(--maincolor) solid;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -ms-grid;
@@ -82,7 +95,7 @@ body #areacol::before {
 }
 
 #myarea .myeffects .timestabs {
-  border: 0.5px var(--maincolor) solid;
+  border: 1px var(--maincolor) solid;
   text-align: center;
 }
 
@@ -95,7 +108,7 @@ body #areacol::before {
 }
 
 #myarea .myeffects .effectstabs {
-  border: 0.5px var(--maincolor) solid;
+  border: 1px var(--maincolor) solid;
   text-align: center;
 }
 
@@ -137,7 +150,7 @@ body #areacol::before {
   height: auto;
   margin: 0 var(--margin) 0 0;
   padding: var(--padding);
-  border: 0.5px var(--maincolor) solid;
+  border: 1px var(--maincolor) solid;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -160,15 +173,15 @@ body #areacol::before {
   margin: 0 var(--margin) var(--margin) var(--margin);
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (calc(100%/var(--enedeckcards)))[var];
-      grid-template-columns: repeat(var(--enedeckcards), calc(100%/var(--enedeckcards)));
+  -ms-grid-columns: (calc(100% / var(--enedeckcards)))[var];
+      grid-template-columns: repeat(var(--enedeckcards), calc(100% / var(--enedeckcards)));
 }
 
 #mainarea #enedeck .enecard {
   width: 130%;
   border-radius: 0 0 var(--cardradius) var(--cardradius);
   background-color: #646464;
-  border: 0.5px var(--maincolor) solid;
+  border: 1px var(--maincolor) solid;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -177,12 +190,94 @@ body #areacol::before {
   background-color: greenyellow;
 }
 
+#mainarea #enehp {
+  width: auto;
+  margin: 0 var(--margin) 0 var(--margin);
+  border: 1px var(--maincolor) solid;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#mainarea #enehp div {
+  position: absolute;
+}
+
+#mainarea #enehp #enehpbar1 {
+  width: calc(0.01% * (var(--enenowhp) - 0));
+  max-width: 100%;
+  background-color: var(--hpcolor1);
+}
+
+#mainarea #enehp #enehpbar2 {
+  width: calc(0.01% * (var(--enenowhp) - 10000));
+  max-width: 100%;
+  background-color: var(--hpcolor2);
+}
+
+#mainarea #enehp #enehpbar3 {
+  width: calc(0.01% * (var(--enenowhp) - 20000));
+  max-width: 100%;
+  background-color: var(--hpcolor3);
+}
+
+#mainarea #enehp #enehpbar4 {
+  width: calc(0.01% * (var(--enenowhp) - 30000));
+  max-width: 100%;
+  background-color: var(--hpcolor4);
+}
+
+#mainarea #enehp #enehpbar5 {
+  width: calc(0.01% * (var(--enenowhp) - 40000));
+  max-width: 100%;
+  background-color: var(--hpcolor5);
+}
+
+#mainarea #enehp #enehpbar6 {
+  width: calc(0.01% * (var(--enenowhp) - 50000));
+  max-width: 100%;
+  background-color: var(--hpcolor6);
+}
+
+#mainarea #enehp #enehpbar7 {
+  width: calc(0.01% * (var(--enenowhp) - 60000));
+  max-width: 100%;
+  background-color: var(--hpcolor7);
+}
+
+#mainarea #enehp #enehpbar8 {
+  width: calc(0.01% * (var(--enenowhp) - 70000));
+  max-width: 100%;
+  background-color: var(--hpcolor8);
+}
+
+#mainarea #enehp #enehpbar9 {
+  width: calc(0.01% * (var(--enenowhp) - 80000));
+  max-width: 100%;
+  background-color: var(--hpcolor9);
+}
+
+#mainarea #enehp #enehpbar10 {
+  width: calc(0.01% * (var(--enenowhp) - 90000));
+  max-width: 100%;
+  background-color: var(--hpcolor10);
+}
+
+#mainarea #enehp #enehpbar11 {
+  width: calc(0.01% * (var(--enenowhp) - 100000));
+  max-width: 100%;
+  background-color: var(--hpcolor11);
+}
+
+#mainarea #enehp #enehptext {
+  color: black;
+}
+
 #mainarea #log {
   width: auto;
   height: auto;
   margin: var(--margin);
   padding: var(--padding);
-  border: 0.5px var(--maincolor) solid;
+  border: 1px var(--maincolor) solid;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow-x: hidden;
@@ -208,6 +303,88 @@ body #areacol::before {
   position: absolute;
 }
 
+#mainarea #myhp {
+  width: auto;
+  margin: 0 var(--margin) 0 var(--margin);
+  border: 1px var(--maincolor) solid;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#mainarea #myhp div {
+  position: absolute;
+}
+
+#mainarea #myhp #myhpbar1 {
+  width: calc(0.01% * (var(--mynowhp) - 0));
+  max-width: 100%;
+  background-color: var(--hpcolor1);
+}
+
+#mainarea #myhp #myhpbar2 {
+  width: calc(0.01% * (var(--mynowhp) - 10000));
+  max-width: 100%;
+  background-color: var(--hpcolor2);
+}
+
+#mainarea #myhp #myhpbar3 {
+  width: calc(0.01% * (var(--mynowhp) - 20000));
+  max-width: 100%;
+  background-color: var(--hpcolor3);
+}
+
+#mainarea #myhp #myhpbar4 {
+  width: calc(0.01% * (var(--mynowhp) - 30000));
+  max-width: 100%;
+  background-color: var(--hpcolor4);
+}
+
+#mainarea #myhp #myhpbar5 {
+  width: calc(0.01% * (var(--mynowhp) - 40000));
+  max-width: 100%;
+  background-color: var(--hpcolor5);
+}
+
+#mainarea #myhp #myhpbar6 {
+  width: calc(0.01% * (var(--mynowhp) - 50000));
+  max-width: 100%;
+  background-color: var(--hpcolor6);
+}
+
+#mainarea #myhp #myhpbar7 {
+  width: calc(0.01% * (var(--mynowhp) - 60000));
+  max-width: 100%;
+  background-color: var(--hpcolor7);
+}
+
+#mainarea #myhp #myhpbar8 {
+  width: calc(0.01% * (var(--mynowhp) - 70000));
+  max-width: 100%;
+  background-color: var(--hpcolor8);
+}
+
+#mainarea #myhp #myhpbar9 {
+  width: calc(0.01% * (var(--mynowhp) - 80000));
+  max-width: 100%;
+  background-color: var(--hpcolor9);
+}
+
+#mainarea #myhp #myhpbar10 {
+  width: calc(0.01% * (var(--mynowhp) - 90000));
+  max-width: 100%;
+  background-color: var(--hpcolor10);
+}
+
+#mainarea #myhp #myhpbar11 {
+  width: calc(0.01% * (var(--mynowhp) - 100000));
+  max-width: 100%;
+  background-color: var(--hpcolor11);
+}
+
+#mainarea #myhp #myhptext {
+  color: black;
+}
+
 #mainarea #mydeck {
   width: auto;
   height: auto;
@@ -224,7 +401,7 @@ body #areacol::before {
   width: 150%;
   border-radius: var(--cardradius) var(--cardradius) 0 0;
   background-color: #646464;
-  border: 0.5px var(--maincolor) solid;
+  border: 1px var(--maincolor) solid;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -245,7 +422,7 @@ body #areacol::before {
   height: auto;
   margin: 0 0 0 var(--margin);
   padding: var(--padding);
-  border: 0.5px var(--maincolor) solid;
+  border: 1px var(--maincolor) solid;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -259,7 +436,7 @@ body #areacol::before {
   width: auto;
   height: auto;
   margin: 0 0 var(--margin) var(--margin);
-  border: 0.5px var(--maincolor) solid;
+  border: 1px var(--maincolor) solid;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -ms-grid;
@@ -272,7 +449,7 @@ body #areacol::before {
 }
 
 #enearea .eneeffects .timestabs {
-  border: 0.5px var(--maincolor) solid;
+  border: 1px var(--maincolor) solid;
   text-align: center;
 }
 
@@ -285,7 +462,7 @@ body #areacol::before {
 }
 
 #enearea .eneeffects .effectstabs {
-  border: 0.5px var(--maincolor) solid;
+  border: 1px var(--maincolor) solid;
   text-align: center;
 }
 

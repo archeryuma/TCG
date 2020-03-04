@@ -6,6 +6,19 @@
   --cardradius: 10%;
   --mydeckcards: 15;//プレイヤーデッキカード枚数
   --enedeckcards: 15;//敵デッキカード枚数
+  --mynowhp: 56789;
+  --enenowhp: 34567;
+  --hpcolor1: rgb(255, 0, 0);
+  --hpcolor2: rgb(255, 100, 0);
+  --hpcolor3: rgb(255, 200, 0);
+  --hpcolor4: rgb(255, 255, 0);
+  --hpcolor5: rgb(100, 255, 100);
+  --hpcolor6: rgb(0, 255, 255);
+  --hpcolor7: rgb(0, 100, 255);
+  --hpcolor8: rgb(100, 50, 150);
+  --hpcolor9: rgb(200, 200, 200);
+  --hpcolor10: rgb(100, 100, 100);
+  --hpcolor11: rgb(50, 50, 50);
 }
 *{
   margin: 0;
@@ -16,6 +29,7 @@
   color: var(--maincolor);
   font-family: 'Noto Sans JP', sans-serif;
 }
+
 
 
 body {//全体設定
@@ -44,6 +58,7 @@ body {//全体設定
 }
 
 
+
 #myarea{//左エリア
   display: grid;
   grid-template-rows: 10% 1fr 17%;
@@ -59,14 +74,14 @@ body {//全体設定
     width: auto;
     height: auto;
     margin: var(--margin) var(--margin) 0 0;
-    border: 0.5px var(--maincolor) solid;
+    border: 1px var(--maincolor) solid;
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 10% 1fr;
     grid-template-areas: "times effects" "contents contents";
     .timestabs{//timesタブのスタイル
-      border: 0.5px var(--maincolor) solid;
+      border: 1px var(--maincolor) solid;
       text-align: center;
       &::before{
         content: 'times';
@@ -76,7 +91,7 @@ body {//全体設定
       }
     }
     .effectstabs{//effectsタブのスタイル
-      border: 0.5px var(--maincolor) solid;
+      border: 1px var(--maincolor) solid;
       text-align: center;
       &::before{
         content: 'effects';
@@ -113,7 +128,7 @@ body {//全体設定
     height: auto;
     margin: 0 var(--margin) 0 0;
     padding: var(--padding);
-    border: 0.5px var(--maincolor) solid;
+    border: 1px var(--maincolor) solid;
     box-sizing: border-box;
     p{
       height: 1em;
@@ -121,6 +136,7 @@ body {//全体設定
     }
   }
 }
+
 
 
 #mainarea{//中央エリア
@@ -131,16 +147,82 @@ body {//全体設定
     height: auto;
     margin: 0 var(--margin) var(--margin) var(--margin);
     display: grid;
-    grid-template-columns: repeat(var(--enedeckcards), calc(100%/var(--enedeckcards)));
+    grid-template-columns: repeat(var(--enedeckcards), calc(100% / var(--enedeckcards)));
     .enecard{
       width: 130%;
       border-radius: 0 0 var(--cardradius) var(--cardradius);
       background-color: rgb(100,100,100);
-      border: 0.5px var(--maincolor) solid;
+      border: 1px var(--maincolor) solid;
       box-sizing: border-box;
     }
     #enecard05{
       background-color: greenyellow;
+    }
+  }
+
+  #enehp{
+    width: auto;
+    margin: 0 var(--margin) 0 var(--margin);
+    border: 1px var(--maincolor) solid;
+    box-sizing: border-box;
+    div{position: absolute;}
+    #enehpbar1{
+      width: calc(0.01% * (var(--enenowhp) - 0));
+      max-width: 100%;
+      background-color: var(--hpcolor1);
+    }
+    #enehpbar2{
+      width: calc(0.01% * (var(--enenowhp) - 10000));
+      max-width: 100%;
+      background-color: var(--hpcolor2);
+    }
+    #enehpbar3{
+      width: calc(0.01% * (var(--enenowhp) - 20000));
+      max-width: 100%;
+      background-color: var(--hpcolor3);
+    }
+    #enehpbar4{
+      width: calc(0.01% * (var(--enenowhp) - 30000));
+      max-width: 100%;
+      background-color: var(--hpcolor4);
+    }
+    #enehpbar5{
+      width: calc(0.01% * (var(--enenowhp) - 40000));
+      max-width: 100%;
+      background-color: var(--hpcolor5);
+    }
+    #enehpbar6{
+      width: calc(0.01% * (var(--enenowhp) - 50000));
+      max-width: 100%;
+      background-color: var(--hpcolor6);
+    }
+    #enehpbar7{
+      width: calc(0.01% * (var(--enenowhp) - 60000));
+      max-width: 100%;
+      background-color: var(--hpcolor7);
+    }
+    #enehpbar8{
+      width: calc(0.01% * (var(--enenowhp) - 70000));
+      max-width: 100%;
+      background-color: var(--hpcolor8);
+    }
+    #enehpbar9{
+      width: calc(0.01% * (var(--enenowhp) - 80000));
+      max-width: 100%;
+      background-color: var(--hpcolor9);
+    }
+    #enehpbar10{
+      width: calc(0.01% * (var(--enenowhp) - 90000));
+      max-width: 100%;
+      background-color: var(--hpcolor10);
+    }
+    #enehpbar11{
+      width: calc(0.01% * (var(--enenowhp) - 100000));
+      max-width: 100%;
+      background-color: var(--hpcolor11);
+    }
+    #enehptext{
+      color: black;
     }
   }
 
@@ -149,7 +231,7 @@ body {//全体設定
     height: auto;
     margin: var(--margin);
     padding: var(--padding);
-    border: 0.5px var(--maincolor) solid;
+    border: 1px var(--maincolor) solid;
     box-sizing: border-box;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -170,6 +252,72 @@ body {//全体設定
     }
   }
 
+  #myhp{
+    width: auto;
+    margin: 0 var(--margin) 0 var(--margin);
+    border: 1px var(--maincolor) solid;
+    box-sizing: border-box;
+    div{position: absolute;}
+    #myhpbar1{
+      width: calc(0.01% * (var(--mynowhp) - 0));
+      max-width: 100%;
+      background-color: var(--hpcolor1);
+    }
+    #myhpbar2{
+      width: calc(0.01% * (var(--mynowhp) - 10000));
+      max-width: 100%;
+      background-color: var(--hpcolor2);
+    }
+    #myhpbar3{
+      width: calc(0.01% * (var(--mynowhp) - 20000));
+      max-width: 100%;
+      background-color: var(--hpcolor3);
+    }
+    #myhpbar4{
+      width: calc(0.01% * (var(--mynowhp) - 30000));
+      max-width: 100%;
+      background-color: var(--hpcolor4);
+    }
+    #myhpbar5{
+      width: calc(0.01% * (var(--mynowhp) - 40000));
+      max-width: 100%;
+      background-color: var(--hpcolor5);
+    }
+    #myhpbar6{
+      width: calc(0.01% * (var(--mynowhp) - 50000));
+      max-width: 100%;
+      background-color: var(--hpcolor6);
+    }
+    #myhpbar7{
+      width: calc(0.01% * (var(--mynowhp) - 60000));
+      max-width: 100%;
+      background-color: var(--hpcolor7);
+    }
+    #myhpbar8{
+      width: calc(0.01% * (var(--mynowhp) - 70000));
+      max-width: 100%;
+      background-color: var(--hpcolor8);
+    }
+    #myhpbar9{
+      width: calc(0.01% * (var(--mynowhp) - 80000));
+      max-width: 100%;
+      background-color: var(--hpcolor9);
+    }
+    #myhpbar10{
+      width: calc(0.01% * (var(--mynowhp) - 90000));
+      max-width: 100%;
+      background-color: var(--hpcolor10);
+    }
+    #myhpbar11{
+      width: calc(0.01% * (var(--mynowhp) - 100000));
+      max-width: 100%;
+      background-color: var(--hpcolor11);
+    }
+    #myhptext{
+      color: black;
+    }
+  }
+
   #mydeck{
     width: auto;
     height: auto;
@@ -182,7 +330,7 @@ body {//全体設定
       width: 150%;
       border-radius: var(--cardradius) var(--cardradius) 0 0;
       background-color: rgb(100,100,100);
-      border: 0.5px var(--maincolor) solid;
+      border: 1px var(--maincolor) solid;
       box-sizing: border-box;
     }
     #mycard03{
@@ -190,6 +338,7 @@ body {//全体設定
     }
   }
 }
+
 
 
 #enearea{//右エリア
@@ -200,7 +349,7 @@ body {//全体設定
     height: auto;
     margin: 0 0 0 var(--margin);
     padding: var(--padding);
-    border: 0.5px var(--maincolor) solid;
+    border: 1px var(--maincolor) solid;
     box-sizing: border-box;
     p{
       height: 1em;
@@ -212,14 +361,14 @@ body {//全体設定
     width: auto;
     height: auto;
     margin: 0 0 var(--margin) var(--margin);
-    border: 0.5px var(--maincolor) solid;
+    border: 1px var(--maincolor) solid;
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 12% 1fr;
     grid-template-areas: "times effects" "contents contents";
     .timestabs{//timesタブのスタイル
-      border: 0.5px var(--maincolor) solid;
+      border: 1px var(--maincolor) solid;
       text-align: center;
       &::before{
         content: 'times';
@@ -229,7 +378,7 @@ body {//全体設定
       }
     }
     .effectstabs{//effectsタブのスタイル
-      border: 0.5px var(--maincolor) solid;
+      border: 1px var(--maincolor) solid;
       text-align: center;
       &::before{
         content: 'effects';
