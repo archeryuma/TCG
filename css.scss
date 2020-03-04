@@ -27,7 +27,9 @@
   height: 100%;
   position: relative;
   color: var(--maincolor);
-  font-family: 'Noto Sans JP', sans-serif;
+  // font-family: 'Noto Sans JP', sans-serif;
+  font-family: '游ゴシック';
+  font-size: 2vw;
 }
 
 
@@ -41,7 +43,6 @@ body {//全体設定
   background-size: 100% 100%;
   margin: auto;
   #areacol {
-    font-size: 2vw;
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 20% 1fr 20%;
@@ -416,7 +417,7 @@ body {//全体設定
     #cparea{
       padding: var(--padding);
       text-align: center;
-      font-size: 4vw;
+      font-size: 200%;
     }
     #playbutton{
       width: auto;
@@ -428,7 +429,7 @@ body {//全体設定
       border: 5px var(--maincolor) solid;
       box-sizing: border-box;
       text-align: center;
-      font-size: 4vw;
+      font-size: 200%;
       &::before{
         content: 'play';
         position: absolute;

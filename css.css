@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --backgroundcolor: black;
   --maincolor: white;
@@ -28,7 +29,8 @@
   height: 100%;
   position: relative;
   color: var(--maincolor);
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: '游ゴシック';
+  font-size: 2vw;
 }
 
 body {
@@ -42,7 +44,6 @@ body {
 }
 
 body #areacol {
-  font-size: 2vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -ms-grid;
@@ -509,7 +510,7 @@ body #areacol::before {
 #enearea #playarea #cparea {
   padding: var(--padding);
   text-align: center;
-  font-size: 4vw;
+  font-size: 200%;
 }
 
 #enearea #playarea #playbutton {
@@ -523,7 +524,7 @@ body #areacol::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-align: center;
-  font-size: 4vw;
+  font-size: 200%;
 }
 
 #enearea #playarea #playbutton::before {
