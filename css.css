@@ -1,7 +1,7 @@
-@charset "UTF-8";
 :root {
   --backgroundcolor: black;
   --maincolor: white;
+  --fontsize: 2vw;
   --margin: 1.5%;
   --padding: 1.5%;
   --cardradius: 10%;
@@ -29,8 +29,9 @@
   height: 100%;
   position: relative;
   color: var(--maincolor);
-  font-family: '游ゴシック';
-  font-size: 2vw;
+  font-family: serif;
+  font-weight: bolder;
+  font-size: var(--fontsize);
 }
 
 body {
@@ -510,7 +511,7 @@ body #areacol::before {
 #enearea #playarea #cparea {
   padding: var(--padding);
   text-align: center;
-  font-size: 200%;
+  font-size: calc(var(--fontsize) * 2);
 }
 
 #enearea #playarea #playbutton {
@@ -524,7 +525,7 @@ body #areacol::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-align: center;
-  font-size: 200%;
+  font-size: calc(var(--fontsize) * 2);
 }
 
 #enearea #playarea #playbutton::before {

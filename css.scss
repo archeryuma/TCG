@@ -1,6 +1,7 @@
 :root{//定義・宣言
   --backgroundcolor: black;
   --maincolor: white;
+  --fontsize: 2vw;
   --margin: 1.5%;
   --padding: 1.5%;
   --cardradius: 10%;
@@ -27,9 +28,9 @@
   height: 100%;
   position: relative;
   color: var(--maincolor);
-  // font-family: 'Noto Sans JP', sans-serif;
-  font-family: '游ゴシック';
-  font-size: 2vw;
+  font-family: serif;
+  font-weight: bolder;
+  font-size: var(--fontsize);
 }
 
 
@@ -417,7 +418,7 @@ body {//全体設定
     #cparea{
       padding: var(--padding);
       text-align: center;
-      font-size: 200%;
+      font-size: calc(var(--fontsize) * 2);
     }
     #playbutton{
       width: auto;
@@ -429,7 +430,7 @@ body {//全体設定
       border: 5px var(--maincolor) solid;
       box-sizing: border-box;
       text-align: center;
-      font-size: 200%;
+      font-size: calc(var(--fontsize) * 2);
       &::before{
         content: 'play';
         position: absolute;
