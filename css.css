@@ -65,7 +65,7 @@ body #areacol::before {
   display: grid;
 }
 
-#myarea #myeffects {
+#myarea .myeffects {
   width: auto;
   height: auto;
   margin: var(--margin) var(--margin) 0 0;
@@ -81,12 +81,12 @@ body #areacol::before {
       grid-template-areas: "times effects" "contents contents";
 }
 
-#myarea #myeffects .timestabs {
+#myarea .myeffects .timestabs {
   border: 0.5px var(--maincolor) solid;
   text-align: center;
 }
 
-#myarea #myeffects .timestabs::before {
+#myarea .myeffects .timestabs::before {
   content: 'times';
   position: absolute;
   top: 50%;
@@ -94,12 +94,12 @@ body #areacol::before {
           transform: translateX(-50%) translateY(-50%);
 }
 
-#myarea #myeffects .effectstabs {
+#myarea .myeffects .effectstabs {
   border: 0.5px var(--maincolor) solid;
   text-align: center;
 }
 
-#myarea #myeffects .effectstabs::before {
+#myarea .myeffects .effectstabs::before {
   content: 'effects';
   position: absolute;
   top: 50%;
@@ -107,11 +107,11 @@ body #areacol::before {
           transform: translateX(-50%) translateY(-50%);
 }
 
-#myarea #myeffects input[name='mytabs'] {
+#myarea .myeffects input[name='mytabs'] {
   display: none;
 }
 
-#myarea #myeffects .tabscontent {
+#myarea .myeffects .tabscontent {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -122,13 +122,13 @@ body #areacol::before {
   overflow: hidden;
 }
 
-#myarea #myeffects #mytimes:checked ~ #mytimescontent,
-#myarea #myeffects #myeffects:checked ~ #myeffectscontent {
+#myarea .myeffects #mytimes:checked ~ #mytimescontent,
+#myarea .myeffects #myeffects:checked ~ #myeffectscontent {
   display: block;
 }
 
-#myarea #myeffects input:checked + .timestabs,
-#myarea #myeffects input:checked + .effectstabs {
+#myarea .myeffects input:checked + .timestabs,
+#myarea .myeffects input:checked + .effectstabs {
   border-bottom: none;
 }
 
@@ -255,7 +255,7 @@ body #areacol::before {
   border: 0;
 }
 
-#enearea #eneeffects {
+#enearea .eneeffects {
   width: auto;
   height: auto;
   margin: 0 0 var(--margin) var(--margin);
@@ -271,12 +271,12 @@ body #areacol::before {
       grid-template-areas: "times effects" "contents contents";
 }
 
-#enearea #eneeffects .timestabs {
+#enearea .eneeffects .timestabs {
   border: 0.5px var(--maincolor) solid;
   text-align: center;
 }
 
-#enearea #eneeffects .timestabs::before {
+#enearea .eneeffects .timestabs::before {
   content: 'times';
   position: absolute;
   top: 50%;
@@ -284,12 +284,12 @@ body #areacol::before {
           transform: translateX(-50%) translateY(-50%);
 }
 
-#enearea #eneeffects .effectstabs {
+#enearea .eneeffects .effectstabs {
   border: 0.5px var(--maincolor) solid;
   text-align: center;
 }
 
-#enearea #eneeffects .effectstabs::before {
+#enearea .eneeffects .effectstabs::before {
   content: 'effects';
   position: absolute;
   top: 50%;
@@ -297,11 +297,11 @@ body #areacol::before {
           transform: translateX(-50%) translateY(-50%);
 }
 
-#enearea #eneeffects input[name='enetabs'] {
+#enearea .eneeffects input[name='enetabs'] {
   display: none;
 }
 
-#enearea #eneeffects .tabscontent {
+#enearea .eneeffects .tabscontent {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -312,13 +312,13 @@ body #areacol::before {
   overflow: hidden;
 }
 
-#enearea #eneeffects #enetimes:checked ~ #enetimescontent,
-#enearea #eneeffects #eneeffects:checked ~ #eneeffectscontent {
+#enearea .eneeffects #enetimes:checked ~ #enetimescontent,
+#enearea .eneeffects #eneeffects:checked ~ #eneeffectscontent {
   display: block;
 }
 
-#enearea #eneeffects input:checked + .timestabs,
-#enearea #eneeffects input:checked + .effectstabs {
+#enearea .eneeffects input:checked + .timestabs,
+#enearea .eneeffects input:checked + .effectstabs {
   border-bottom: none;
 }
 
@@ -357,7 +357,7 @@ body #areacol::before {
           transform: translateX(-50%) translateY(-50%);
 }
 
-#myeffects, #mydata, #log, #enedata, #eneeffects {
+.myeffects, #mydata, #log, #enedata, .eneeffects {
   background: var(--backgroundcolor);
 }
 /*# sourceMappingURL=css.css.map */
