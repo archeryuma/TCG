@@ -26,7 +26,7 @@ body {//全体設定
   background: var(--backgroundcolor);
   background-size: 100% 100%;
   margin: auto;
-  .areacol {
+  #areacol {
     font-size: 2vw;
     box-sizing: border-box;
     display: grid;
@@ -44,10 +44,10 @@ body {//全体設定
 }
 
 
-.myarea{//左エリア
+#myarea{//左エリア
   display: grid;
   grid-template-rows: 10% 1fr 17%;
-  .option{
+  #option{
     width: auto;
     height: auto;
     margin: 0 var(--margin) var(--margin) 0;
@@ -55,7 +55,7 @@ body {//全体設定
     display: grid;
   }
 
-  .mylog{
+  #myeffects{
     width: auto;
     height: auto;
     margin: var(--margin) var(--margin) 0 0;
@@ -91,7 +91,7 @@ body {//全体設定
     input[name='mytabs']{//ラジオボタン消去
       display: none;
     }
-    .logcontent{//非表示
+    .tabscontent{//非表示
       grid-area: contents;
       display: none;
       padding: var(--padding);
@@ -108,7 +108,7 @@ body {//全体設定
     }
   }
 
-  .mydata{
+  #mydata{
     width: auto;
     height: auto;
     margin: 0 var(--margin) 0 0;
@@ -123,10 +123,10 @@ body {//全体設定
 }
 
 
-.mainarea{//中央エリア
+#mainarea{//中央エリア
   display: grid;
   grid-template-rows: 10% 4% 1fr 4% 20%;
-  .enedeck{
+  #enedeck{
     width: auto;
     height: auto;
     margin: 0 var(--margin) var(--margin) var(--margin);
@@ -144,7 +144,7 @@ body {//全体設定
     }
   }
 
-  .alllog{
+  #log{
     width: auto;
     height: auto;
     margin: var(--margin);
@@ -155,7 +155,7 @@ body {//全体設定
     overflow-y: scroll;
   }
 
-  .mydeck{
+  #mydeck{
     width: auto;
     height: auto;
     margin: var(--margin) var(--margin) 0 var(--margin);
@@ -177,10 +177,10 @@ body {//全体設定
 }
 
 
-.enearea{//右エリア
+#enearea{//右エリア
   display: grid;
   grid-template-rows: 17% 1fr 20%;
-  .enedata{
+  #enedata{
     width: auto;
     height: auto;
     margin: 0 0 0 var(--margin);
@@ -193,7 +193,7 @@ body {//全体設定
     }
   }
 
-  .enelog{
+  #eneeffects{
     width: auto;
     height: auto;
     margin: 0 0 var(--margin) var(--margin);
@@ -229,7 +229,7 @@ body {//全体設定
     input[name='enetabs']{//ラジオボタン消去
       display: none;
     }
-    .logcontent{//非表示
+    .tabscontent{//非表示
       grid-area: contents;
       display: none;
       padding: var(--padding);
@@ -246,15 +246,15 @@ body {//全体設定
     }
   }
 
-  .playarea{
+  #playarea{
     display: grid;
     grid-template-columns: 1fr 65%;
-    .cparea{
+    #cparea{
       padding: var(--padding);
       text-align: center;
       font-size: 4vw;
     }
-    .playbutton{
+    #playbutton{
       width: auto;
       height: auto;
       margin: var(--margin);
@@ -276,6 +276,6 @@ body {//全体設定
 }
 
 
-.mylog, .mydata, .alllog, .enedata, .enelog{//ログ背景黒転
+#myeffects, #mydata, #log, #enedata, #eneeffects{//ログ背景黒転
   background: var(--backgroundcolor);
 }

@@ -3,29 +3,29 @@
         <link rel="stylesheet" type="text/css" media="screen" href="css.css">
 </head>
 <body>
-    <div class="areacol">
-        <div class="myarea">
-            <div class="option">option</div>
-            <div class="mylog">
+    <div id="areacol">
+        <div id="myarea">
+            <div id="option">option</div>
+            <div id="myeffects">
                 <input id="mytimes" type="radio" name="mytabs" checked>
                 <label for="mytimes" class="timestabs"></label>
                 <input id="myeffects" type="radio" name="mytabs">
                 <label for="myeffects" class="effectstabs"></label>
-                <div class="logcontent" id="mytimescontent">
+                <div class="tabscontent" id="mytimescontent">
                     times
                 </div>
-                <div class="logcontent" id="myeffectscontent">
+                <div class="tabscontent" id="myeffectscontent">
                     effects
                 </div>
             </div>
-            <div class="mydata">mydata
+            <div id="mydata">mydata
                 <p>power</p>
                 <p>times</p>
                 <p>attack</p>
             </div>
         </div>
-        <div class="mainarea">
-            <div class="enedeck">
+        <div id="mainarea">
+            <div id="enedeck">
                 <div class="enecard" id="enecard01">01</div>
                 <div class="enecard" id="enecard02">02</div>
                 <div class="enecard" id="enecard03">03</div>
@@ -42,10 +42,14 @@
                 <div class="enecard" id="enecard14">14</div>
                 <div class="enecard" id="enecard15">15</div>
             </div>
-            <div class="enehp">enehp</div>
-            <div class="alllog">goodmorning!!</div>
-            <div class="myhp">myhp</div>
-            <div class="mydeck">
+            <div id="enehp">enehp</div>
+            <div id="log">
+                <div id="mylog"></div>
+                <div id="enelog"></div>
+                <div id="commonlog"></div>
+            </div>
+            <div id="myhp">myhp</div>
+            <div id="mydeck">
                 <div class="mycard" id="mycard01">01</div>
                 <div class="mycard" id="mycard02">02</div>
                 <div class="mycard" id="mycard03">03</div>
@@ -63,27 +67,27 @@
                 <div class="mycard" id="mycard15">15</div>
             </div>
         </div>
-        <div class="enearea">
-            <div class="enedata">enedata
+        <div id="enearea">
+            <div id="enedata">enedata
                 <p>power</p>
                 <p>times</p>
                 <p>attack</p>
             </div>
-            <div class="enelog">
+            <div id="eneeffects">
                 <input id="enetimes" type="radio" name="enetabs" checked>
                 <label for="enetimes" class="timestabs"></label>
                 <input id="eneeffects" type="radio" name="enetabs">
                 <label for="eneeffects" class="effectstabs"></label>
-                <div class="logcontent" id="enetimescontent">
+                <div class="tabscontent" id="enetimescontent">
                     times
                 </div>
-                <div class="logcontent" id="eneeffectscontent">
+                <div class="tabscontent" id="eneeffectscontent">
                     effects
                 </div>
             </div>
-            <div class="playarea">
-                <span class="cparea">cp</span>
-                <div class="playbutton"></div>
+            <div id="playarea">
+                <span id="cparea">cp</span>
+                <div id="playbutton"></div>
             </div>
         </div>
     </div>

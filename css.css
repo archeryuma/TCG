@@ -28,7 +28,7 @@ body {
   margin: auto;
 }
 
-body .areacol {
+body #areacol {
   font-size: 2vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -38,7 +38,7 @@ body .areacol {
       grid-template-columns: 20% 1fr 20%;
 }
 
-body .areacol::before {
+body #areacol::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -49,14 +49,14 @@ body .areacol::before {
           filter: grayscale(60%);
 }
 
-.myarea {
+#myarea {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 10% 1fr 17%;
       grid-template-rows: 10% 1fr 17%;
 }
 
-.myarea .option {
+#myarea #option {
   width: auto;
   height: auto;
   margin: 0 var(--margin) var(--margin) 0;
@@ -65,7 +65,7 @@ body .areacol::before {
   display: grid;
 }
 
-.myarea .mylog {
+#myarea #myeffects {
   width: auto;
   height: auto;
   margin: var(--margin) var(--margin) 0 0;
@@ -81,12 +81,12 @@ body .areacol::before {
       grid-template-areas: "times effects" "contents contents";
 }
 
-.myarea .mylog .timestabs {
+#myarea #myeffects .timestabs {
   border: 0.5px var(--maincolor) solid;
   text-align: center;
 }
 
-.myarea .mylog .timestabs::before {
+#myarea #myeffects .timestabs::before {
   content: 'times';
   position: absolute;
   top: 50%;
@@ -94,12 +94,12 @@ body .areacol::before {
           transform: translateX(-50%) translateY(-50%);
 }
 
-.myarea .mylog .effectstabs {
+#myarea #myeffects .effectstabs {
   border: 0.5px var(--maincolor) solid;
   text-align: center;
 }
 
-.myarea .mylog .effectstabs::before {
+#myarea #myeffects .effectstabs::before {
   content: 'effects';
   position: absolute;
   top: 50%;
@@ -107,11 +107,11 @@ body .areacol::before {
           transform: translateX(-50%) translateY(-50%);
 }
 
-.myarea .mylog input[name='mytabs'] {
+#myarea #myeffects input[name='mytabs'] {
   display: none;
 }
 
-.myarea .mylog .logcontent {
+#myarea #myeffects .tabscontent {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -122,17 +122,17 @@ body .areacol::before {
   overflow: hidden;
 }
 
-.myarea .mylog #mytimes:checked ~ #mytimescontent,
-.myarea .mylog #myeffects:checked ~ #myeffectscontent {
+#myarea #myeffects #mytimes:checked ~ #mytimescontent,
+#myarea #myeffects #myeffects:checked ~ #myeffectscontent {
   display: block;
 }
 
-.myarea .mylog input:checked + .timestabs,
-.myarea .mylog input:checked + .effectstabs {
+#myarea #myeffects input:checked + .timestabs,
+#myarea #myeffects input:checked + .effectstabs {
   border-bottom: none;
 }
 
-.myarea .mydata {
+#myarea #mydata {
   width: auto;
   height: auto;
   margin: 0 var(--margin) 0 0;
@@ -142,19 +142,19 @@ body .areacol::before {
           box-sizing: border-box;
 }
 
-.myarea .mydata p {
+#myarea #mydata p {
   height: 1em;
   border: 0;
 }
 
-.mainarea {
+#mainarea {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 10% 4% 1fr 4% 20%;
       grid-template-rows: 10% 4% 1fr 4% 20%;
 }
 
-.mainarea .enedeck {
+#mainarea #enedeck {
   width: auto;
   height: auto;
   margin: 0 var(--margin) var(--margin) var(--margin);
@@ -164,7 +164,7 @@ body .areacol::before {
       grid-template-columns: repeat(var(--enedeckcards), calc(100%/var(--enedeckcards)));
 }
 
-.mainarea .enedeck .enecard {
+#mainarea #enedeck .enecard {
   width: 130%;
   border-radius: 0 0 var(--cardradius) var(--cardradius);
   background-color: #646464;
@@ -173,11 +173,11 @@ body .areacol::before {
           box-sizing: border-box;
 }
 
-.mainarea .enedeck #enecard05 {
+#mainarea #enedeck #enecard05 {
   background-color: greenyellow;
 }
 
-.mainarea .alllog {
+#mainarea #log {
   width: auto;
   height: auto;
   margin: var(--margin);
@@ -189,7 +189,7 @@ body .areacol::before {
   overflow-y: scroll;
 }
 
-.mainarea .mydeck {
+#mainarea #mydeck {
   width: auto;
   height: auto;
   margin: var(--margin) var(--margin) 0 var(--margin);
@@ -201,7 +201,7 @@ body .areacol::before {
       grid-template-columns: repeat(var(--mydeckcards), 10%);
 }
 
-.mainarea .mydeck .mycard {
+#mainarea #mydeck .mycard {
   width: 150%;
   border-radius: var(--cardradius) var(--cardradius) 0 0;
   background-color: #646464;
@@ -210,18 +210,18 @@ body .areacol::before {
           box-sizing: border-box;
 }
 
-.mainarea .mydeck #mycard03 {
+#mainarea #mydeck #mycard03 {
   background-color: aqua;
 }
 
-.enearea {
+#enearea {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 17% 1fr 20%;
       grid-template-rows: 17% 1fr 20%;
 }
 
-.enearea .enedata {
+#enearea #enedata {
   width: auto;
   height: auto;
   margin: 0 0 0 var(--margin);
@@ -231,12 +231,12 @@ body .areacol::before {
           box-sizing: border-box;
 }
 
-.enearea .enedata p {
+#enearea #enedata p {
   height: 1em;
   border: 0;
 }
 
-.enearea .enelog {
+#enearea #eneeffects {
   width: auto;
   height: auto;
   margin: 0 0 var(--margin) var(--margin);
@@ -252,12 +252,12 @@ body .areacol::before {
       grid-template-areas: "times effects" "contents contents";
 }
 
-.enearea .enelog .timestabs {
+#enearea #eneeffects .timestabs {
   border: 0.5px var(--maincolor) solid;
   text-align: center;
 }
 
-.enearea .enelog .timestabs::before {
+#enearea #eneeffects .timestabs::before {
   content: 'times';
   position: absolute;
   top: 50%;
@@ -265,12 +265,12 @@ body .areacol::before {
           transform: translateX(-50%) translateY(-50%);
 }
 
-.enearea .enelog .effectstabs {
+#enearea #eneeffects .effectstabs {
   border: 0.5px var(--maincolor) solid;
   text-align: center;
 }
 
-.enearea .enelog .effectstabs::before {
+#enearea #eneeffects .effectstabs::before {
   content: 'effects';
   position: absolute;
   top: 50%;
@@ -278,11 +278,11 @@ body .areacol::before {
           transform: translateX(-50%) translateY(-50%);
 }
 
-.enearea .enelog input[name='enetabs'] {
+#enearea #eneeffects input[name='enetabs'] {
   display: none;
 }
 
-.enearea .enelog .logcontent {
+#enearea #eneeffects .tabscontent {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -293,30 +293,30 @@ body .areacol::before {
   overflow: hidden;
 }
 
-.enearea .enelog #enetimes:checked ~ #enetimescontent,
-.enearea .enelog #eneeffects:checked ~ #eneeffectscontent {
+#enearea #eneeffects #enetimes:checked ~ #enetimescontent,
+#enearea #eneeffects #eneeffects:checked ~ #eneeffectscontent {
   display: block;
 }
 
-.enearea .enelog input:checked + .timestabs,
-.enearea .enelog input:checked + .effectstabs {
+#enearea #eneeffects input:checked + .timestabs,
+#enearea #eneeffects input:checked + .effectstabs {
   border-bottom: none;
 }
 
-.enearea .playarea {
+#enearea #playarea {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 65%;
       grid-template-columns: 1fr 65%;
 }
 
-.enearea .playarea .cparea {
+#enearea #playarea #cparea {
   padding: var(--padding);
   text-align: center;
   font-size: 4vw;
 }
 
-.enearea .playarea .playbutton {
+#enearea #playarea #playbutton {
   width: auto;
   height: auto;
   margin: var(--margin);
@@ -330,7 +330,7 @@ body .areacol::before {
   font-size: 4vw;
 }
 
-.enearea .playarea .playbutton::before {
+#enearea #playarea #playbutton::before {
   content: 'play';
   position: absolute;
   top: 50%;
@@ -338,7 +338,7 @@ body .areacol::before {
           transform: translateX(-50%) translateY(-50%);
 }
 
-.mylog, .mydata, .alllog, .enedata, .enelog {
+#myeffects, #mydata, #log, #enedata, #eneeffects {
   background: var(--backgroundcolor);
 }
 /*# sourceMappingURL=css.css.map */
