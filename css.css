@@ -79,7 +79,7 @@ body #areacol::before {
   display: grid;
 }
 
-#myarea .myeffects {
+#myarea #mystatus {
   width: auto;
   height: auto;
   margin: var(--margin) var(--margin) 0 0;
@@ -95,12 +95,12 @@ body #areacol::before {
       grid-template-areas: "times effects" "contents contents";
 }
 
-#myarea .myeffects .timestabs {
+#myarea #mystatus .timestabs {
   border: 1px var(--maincolor) solid;
   text-align: center;
 }
 
-#myarea .myeffects .timestabs::before {
+#myarea #mystatus .timestabs::before {
   content: 'times';
   position: absolute;
   top: 50%;
@@ -108,12 +108,12 @@ body #areacol::before {
           transform: translateX(-50%) translateY(-50%);
 }
 
-#myarea .myeffects .effectstabs {
+#myarea #mystatus .effectstabs {
   border: 1px var(--maincolor) solid;
   text-align: center;
 }
 
-#myarea .myeffects .effectstabs::before {
+#myarea #mystatus .effectstabs::before {
   content: 'effects';
   position: absolute;
   top: 50%;
@@ -121,11 +121,11 @@ body #areacol::before {
           transform: translateX(-50%) translateY(-50%);
 }
 
-#myarea .myeffects input[name='mytabs'] {
+#myarea #mystatus input[name='mytabs'] {
   display: none;
 }
 
-#myarea .myeffects .tabscontent {
+#myarea #mystatus .tabscontent {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -136,13 +136,13 @@ body #areacol::before {
   overflow: hidden;
 }
 
-#myarea .myeffects #mytimes:checked ~ #mytimescontent,
-#myarea .myeffects #myeffects:checked ~ #myeffectscontent {
+#myarea #mystatus #mytimes:checked ~ #mytimescontent,
+#myarea #mystatus #myeffects:checked ~ #myeffectscontent {
   display: block;
 }
 
-#myarea .myeffects input:checked + .timestabs,
-#myarea .myeffects input:checked + .effectstabs {
+#myarea #mystatus input:checked + .timestabs,
+#myarea #mystatus input:checked + .effectstabs {
   border-bottom: none;
 }
 
@@ -433,7 +433,7 @@ body #areacol::before {
   border: 0;
 }
 
-#enearea .eneeffects {
+#enearea #enestatus {
   width: auto;
   height: auto;
   margin: 0 0 var(--margin) var(--margin);
@@ -449,12 +449,12 @@ body #areacol::before {
       grid-template-areas: "times effects" "contents contents";
 }
 
-#enearea .eneeffects .timestabs {
+#enearea #enestatus .timestabs {
   border: 1px var(--maincolor) solid;
   text-align: center;
 }
 
-#enearea .eneeffects .timestabs::before {
+#enearea #enestatus .timestabs::before {
   content: 'times';
   position: absolute;
   top: 50%;
@@ -462,12 +462,12 @@ body #areacol::before {
           transform: translateX(-50%) translateY(-50%);
 }
 
-#enearea .eneeffects .effectstabs {
+#enearea #enestatus .effectstabs {
   border: 1px var(--maincolor) solid;
   text-align: center;
 }
 
-#enearea .eneeffects .effectstabs::before {
+#enearea #enestatus .effectstabs::before {
   content: 'effects';
   position: absolute;
   top: 50%;
@@ -475,11 +475,11 @@ body #areacol::before {
           transform: translateX(-50%) translateY(-50%);
 }
 
-#enearea .eneeffects input[name='enetabs'] {
+#enearea #enestatus input[name='enetabs'] {
   display: none;
 }
 
-#enearea .eneeffects .tabscontent {
+#enearea #enestatus .tabscontent {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -490,13 +490,13 @@ body #areacol::before {
   overflow: hidden;
 }
 
-#enearea .eneeffects #enetimes:checked ~ #enetimescontent,
-#enearea .eneeffects #eneeffects:checked ~ #eneeffectscontent {
+#enearea #enestatus #enetimes:checked ~ #enetimescontent,
+#enearea #enestatus #eneeffects:checked ~ #eneeffectscontent {
   display: block;
 }
 
-#enearea .eneeffects input:checked + .timestabs,
-#enearea .eneeffects input:checked + .effectstabs {
+#enearea #enestatus input:checked + .timestabs,
+#enearea #enestatus input:checked + .effectstabs {
   border-bottom: none;
 }
 
@@ -535,7 +535,7 @@ body #areacol::before {
           transform: translateX(-50%) translateY(-50%);
 }
 
-.myeffects, #mydata, #log, #enedata, .eneeffects {
+#mystatus, #mydata, #log, #enedata, #enestatus {
   background: var(--backgroundcolor);
 }
 /*# sourceMappingURL=css.css.map */
