@@ -6,9 +6,9 @@
   --padding: 1.5%;
   --cardradius: 10%;
   --mydeckcards: 15;//プレイヤーデッキカード枚数
-  --enedeckcards: 15;//敵デッキカード枚数
+  --oppdeckcards: 15;//敵デッキカード枚数
   --mynowhp: 56789;
-  --enenowhp: 34567;
+  --oppnowhp: 34567;
   --hpcolor1: rgb(255, 0, 0);
   --hpcolor2: rgb(255, 100, 0);
   --hpcolor3: rgb(255, 200, 0);
@@ -146,86 +146,86 @@ body {//全体設定
 #mainarea{//中央エリア
   display: grid;
   grid-template-rows: 10% 4% 1fr 4% 20%;
-  #enedeck{
+  #oppdeck{
     width: auto;
     height: auto;
     margin: 0 var(--margin) var(--margin) var(--margin);
     display: grid;
-    grid-template-columns: repeat(var(--enedeckcards), calc(100% / var(--enedeckcards)));
-    .enecard{
+    grid-template-columns: repeat(var(--oppdeckcards), calc(100% / var(--oppdeckcards)));
+    .oppcard{
       width: 130%;
       border-radius: 0 0 var(--cardradius) var(--cardradius);
       background-color: rgb(100,100,100);
       border: 1px var(--maincolor) solid;
       box-sizing: border-box;
     }
-    #enecard05{
+    #oppcard05{
       background-color: greenyellow;
     }
   }
 
-  #enehp{
+  #opphp{
     width: auto;
     margin: 0 var(--margin) 0 var(--margin);
     border: 1px var(--maincolor) solid;
     box-sizing: border-box;
     div{position: absolute;}
-    #enehpbar1{
-      width: calc(0.01% * (var(--enenowhp) - 0));
+    #opphpbar1{
+      width: calc(0.01% * (var(--oppnowhp) - 0));
       max-width: 100%;
       background-color: var(--hpcolor1);
     }
-    #enehpbar2{
-      width: calc(0.01% * (var(--enenowhp) - 10000));
+    #opphpbar2{
+      width: calc(0.01% * (var(--oppnowhp) - 10000));
       max-width: 100%;
       background-color: var(--hpcolor2);
     }
-    #enehpbar3{
-      width: calc(0.01% * (var(--enenowhp) - 20000));
+    #opphpbar3{
+      width: calc(0.01% * (var(--oppnowhp) - 20000));
       max-width: 100%;
       background-color: var(--hpcolor3);
     }
-    #enehpbar4{
-      width: calc(0.01% * (var(--enenowhp) - 30000));
+    #opphpbar4{
+      width: calc(0.01% * (var(--oppnowhp) - 30000));
       max-width: 100%;
       background-color: var(--hpcolor4);
     }
-    #enehpbar5{
-      width: calc(0.01% * (var(--enenowhp) - 40000));
+    #opphpbar5{
+      width: calc(0.01% * (var(--oppnowhp) - 40000));
       max-width: 100%;
       background-color: var(--hpcolor5);
     }
-    #enehpbar6{
-      width: calc(0.01% * (var(--enenowhp) - 50000));
+    #opphpbar6{
+      width: calc(0.01% * (var(--oppnowhp) - 50000));
       max-width: 100%;
       background-color: var(--hpcolor6);
     }
-    #enehpbar7{
-      width: calc(0.01% * (var(--enenowhp) - 60000));
+    #opphpbar7{
+      width: calc(0.01% * (var(--oppnowhp) - 60000));
       max-width: 100%;
       background-color: var(--hpcolor7);
     }
-    #enehpbar8{
-      width: calc(0.01% * (var(--enenowhp) - 70000));
+    #opphpbar8{
+      width: calc(0.01% * (var(--oppnowhp) - 70000));
       max-width: 100%;
       background-color: var(--hpcolor8);
     }
-    #enehpbar9{
-      width: calc(0.01% * (var(--enenowhp) - 80000));
+    #opphpbar9{
+      width: calc(0.01% * (var(--oppnowhp) - 80000));
       max-width: 100%;
       background-color: var(--hpcolor9);
     }
-    #enehpbar10{
-      width: calc(0.01% * (var(--enenowhp) - 90000));
+    #opphpbar10{
+      width: calc(0.01% * (var(--oppnowhp) - 90000));
       max-width: 100%;
       background-color: var(--hpcolor10);
     }
-    #enehpbar11{
-      width: calc(0.01% * (var(--enenowhp) - 100000));
+    #opphpbar11{
+      width: calc(0.01% * (var(--oppnowhp) - 100000));
       max-width: 100%;
       background-color: var(--hpcolor11);
     }
-    #enehptext{
+    #opphptext{
       color: black;
     }
   }
@@ -244,7 +244,7 @@ body {//全体設定
       height: auto;
       position: absolute;
     }
-    #enelog{
+    #opplog{
       width: 50%;
       height: auto;
       position: absolute;
@@ -348,10 +348,10 @@ body {//全体設定
 
 
 
-#enearea{//右エリア
+#opparea{//右エリア
   display: grid;
   grid-template-rows: 17% 1fr 20%;
-  #enedata{
+  #oppdata{
     width: auto;
     height: auto;
     margin: 0 0 0 var(--margin);
@@ -364,7 +364,7 @@ body {//全体設定
     }
   }
 
-  #enestatus{
+  #oppstatus{
     width: auto;
     height: auto;
     margin: 0 0 var(--margin) var(--margin);
@@ -397,7 +397,7 @@ body {//全体設定
     // .tabs:hover{
       
     // }
-    input[name='enetabs']{//ラジオボタン消去
+    input[name='opptabs']{//ラジオボタン消去
       display: none;
     }
     .tabscontent{//スタイル&非表示
@@ -409,8 +409,8 @@ body {//全体設定
       clear: both;
       overflow: hidden;
     }
-    #enetimes:checked ~ #enetimescontent,
-    #eneeffects:checked ~ #eneeffectscontent{//選択中のみ表示
+    #opptimes:checked ~ #opptimescontent,
+    #oppeffects:checked ~ #oppeffectscontent{//選択中のみ表示
       display: block;
     }
     input:checked + .timestabs,
@@ -452,6 +452,6 @@ body {//全体設定
 }
 
 
-#mystatus, #mydata, #log, #enedata, #enestatus{//ログ背景黒転
+#mystatus, #mydata, #log, #oppdata, #oppstatus{//ログ背景黒転
   background: var(--backgroundcolor);
 }
