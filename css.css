@@ -6,9 +6,9 @@
   --padding: 1.5%;
   --cardradius: 10%;
   --mydeckcards: 15;
-  --enedeckcards: 15;
+  --oppdeckcards: 15;
   --mynowhp: 56789;
-  --enenowhp: 34567;
+  --oppnowhp: 34567;
   --hpcolor1: rgb(255, 0, 0);
   --hpcolor2: rgb(255, 100, 0);
   --hpcolor3: rgb(255, 200, 0);
@@ -171,17 +171,17 @@ body #areacol::before {
       grid-template-rows: 10% 4% 1fr 4% 20%;
 }
 
-#mainarea #enedeck {
+#mainarea #oppdeck {
   width: auto;
   height: auto;
   margin: 0 var(--margin) var(--margin) var(--margin);
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (calc(100% / var(--enedeckcards)))[var];
-      grid-template-columns: repeat(var(--enedeckcards), calc(100% / var(--enedeckcards)));
+  -ms-grid-columns: (calc(100% / var(--oppdeckcards)))[var];
+      grid-template-columns: repeat(var(--oppdeckcards), calc(100% / var(--oppdeckcards)));
 }
 
-#mainarea #enedeck .enecard {
+#mainarea #oppdeck .oppcard {
   width: 130%;
   border-radius: 0 0 var(--cardradius) var(--cardradius);
   background-color: #646464;
@@ -190,11 +190,11 @@ body #areacol::before {
           box-sizing: border-box;
 }
 
-#mainarea #enedeck #enecard05 {
+#mainarea #oppdeck #oppcard05 {
   background-color: greenyellow;
 }
 
-#mainarea #enehp {
+#mainarea #opphp {
   width: auto;
   margin: 0 var(--margin) 0 var(--margin);
   border: 1px var(--maincolor) solid;
@@ -202,77 +202,77 @@ body #areacol::before {
           box-sizing: border-box;
 }
 
-#mainarea #enehp div {
+#mainarea #opphp div {
   position: absolute;
 }
 
-#mainarea #enehp #enehpbar1 {
-  width: calc(0.01% * (var(--enenowhp) - 0));
+#mainarea #opphp #opphpbar1 {
+  width: calc(0.01% * (var(--oppnowhp) - 0));
   max-width: 100%;
   background-color: var(--hpcolor1);
 }
 
-#mainarea #enehp #enehpbar2 {
-  width: calc(0.01% * (var(--enenowhp) - 10000));
+#mainarea #opphp #opphpbar2 {
+  width: calc(0.01% * (var(--oppnowhp) - 10000));
   max-width: 100%;
   background-color: var(--hpcolor2);
 }
 
-#mainarea #enehp #enehpbar3 {
-  width: calc(0.01% * (var(--enenowhp) - 20000));
+#mainarea #opphp #opphpbar3 {
+  width: calc(0.01% * (var(--oppnowhp) - 20000));
   max-width: 100%;
   background-color: var(--hpcolor3);
 }
 
-#mainarea #enehp #enehpbar4 {
-  width: calc(0.01% * (var(--enenowhp) - 30000));
+#mainarea #opphp #opphpbar4 {
+  width: calc(0.01% * (var(--oppnowhp) - 30000));
   max-width: 100%;
   background-color: var(--hpcolor4);
 }
 
-#mainarea #enehp #enehpbar5 {
-  width: calc(0.01% * (var(--enenowhp) - 40000));
+#mainarea #opphp #opphpbar5 {
+  width: calc(0.01% * (var(--oppnowhp) - 40000));
   max-width: 100%;
   background-color: var(--hpcolor5);
 }
 
-#mainarea #enehp #enehpbar6 {
-  width: calc(0.01% * (var(--enenowhp) - 50000));
+#mainarea #opphp #opphpbar6 {
+  width: calc(0.01% * (var(--oppnowhp) - 50000));
   max-width: 100%;
   background-color: var(--hpcolor6);
 }
 
-#mainarea #enehp #enehpbar7 {
-  width: calc(0.01% * (var(--enenowhp) - 60000));
+#mainarea #opphp #opphpbar7 {
+  width: calc(0.01% * (var(--oppnowhp) - 60000));
   max-width: 100%;
   background-color: var(--hpcolor7);
 }
 
-#mainarea #enehp #enehpbar8 {
-  width: calc(0.01% * (var(--enenowhp) - 70000));
+#mainarea #opphp #opphpbar8 {
+  width: calc(0.01% * (var(--oppnowhp) - 70000));
   max-width: 100%;
   background-color: var(--hpcolor8);
 }
 
-#mainarea #enehp #enehpbar9 {
-  width: calc(0.01% * (var(--enenowhp) - 80000));
+#mainarea #opphp #opphpbar9 {
+  width: calc(0.01% * (var(--oppnowhp) - 80000));
   max-width: 100%;
   background-color: var(--hpcolor9);
 }
 
-#mainarea #enehp #enehpbar10 {
-  width: calc(0.01% * (var(--enenowhp) - 90000));
+#mainarea #opphp #opphpbar10 {
+  width: calc(0.01% * (var(--oppnowhp) - 90000));
   max-width: 100%;
   background-color: var(--hpcolor10);
 }
 
-#mainarea #enehp #enehpbar11 {
-  width: calc(0.01% * (var(--enenowhp) - 100000));
+#mainarea #opphp #opphpbar11 {
+  width: calc(0.01% * (var(--oppnowhp) - 100000));
   max-width: 100%;
   background-color: var(--hpcolor11);
 }
 
-#mainarea #enehp #enehptext {
+#mainarea #opphp #opphptext {
   color: black;
 }
 
@@ -294,7 +294,7 @@ body #areacol::before {
   position: absolute;
 }
 
-#mainarea #log #enelog {
+#mainarea #log #opplog {
   width: 50%;
   height: auto;
   position: absolute;
@@ -419,14 +419,14 @@ body #areacol::before {
   background-color: orangered;
 }
 
-#enearea {
+#opparea {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 17% 1fr 20%;
       grid-template-rows: 17% 1fr 20%;
 }
 
-#enearea #enedata {
+#opparea #oppdata {
   width: auto;
   height: auto;
   margin: 0 0 0 var(--margin);
@@ -436,12 +436,12 @@ body #areacol::before {
           box-sizing: border-box;
 }
 
-#enearea #enedata p {
+#opparea #oppdata p {
   height: 1em;
   border: 0;
 }
 
-#enearea #enestatus {
+#opparea #oppstatus {
   width: auto;
   height: auto;
   margin: 0 0 var(--margin) var(--margin);
@@ -457,12 +457,12 @@ body #areacol::before {
       grid-template-areas: "times effects" "contents contents";
 }
 
-#enearea #enestatus .timestabs {
+#opparea #oppstatus .timestabs {
   border: 1px var(--maincolor) solid;
   text-align: center;
 }
 
-#enearea #enestatus .timestabs::before {
+#opparea #oppstatus .timestabs::before {
   content: 'times';
   position: absolute;
   top: 50%;
@@ -470,12 +470,12 @@ body #areacol::before {
           transform: translateX(-50%) translateY(-50%);
 }
 
-#enearea #enestatus .effectstabs {
+#opparea #oppstatus .effectstabs {
   border: 1px var(--maincolor) solid;
   text-align: center;
 }
 
-#enearea #enestatus .effectstabs::before {
+#opparea #oppstatus .effectstabs::before {
   content: 'effects';
   position: absolute;
   top: 50%;
@@ -483,11 +483,11 @@ body #areacol::before {
           transform: translateX(-50%) translateY(-50%);
 }
 
-#enearea #enestatus input[name='enetabs'] {
+#opparea #oppstatus input[name='opptabs'] {
   display: none;
 }
 
-#enearea #enestatus .tabscontent {
+#opparea #oppstatus .tabscontent {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -500,30 +500,30 @@ body #areacol::before {
   overflow: hidden;
 }
 
-#enearea #enestatus #enetimes:checked ~ #enetimescontent,
-#enearea #enestatus #eneeffects:checked ~ #eneeffectscontent {
+#opparea #oppstatus #opptimes:checked ~ #opptimescontent,
+#opparea #oppstatus #oppeffects:checked ~ #oppeffectscontent {
   display: block;
 }
 
-#enearea #enestatus input:checked + .timestabs,
-#enearea #enestatus input:checked + .effectstabs {
+#opparea #oppstatus input:checked + .timestabs,
+#opparea #oppstatus input:checked + .effectstabs {
   border-bottom: none;
 }
 
-#enearea #playarea {
+#opparea #playarea {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 65%;
       grid-template-columns: 1fr 65%;
 }
 
-#enearea #playarea #cparea {
+#opparea #playarea #cparea {
   padding: var(--padding);
   text-align: center;
   font-size: calc(var(--fontsize) * 2);
 }
 
-#enearea #playarea #playbutton {
+#opparea #playarea #playbutton {
   width: auto;
   height: auto;
   margin: var(--margin);
@@ -537,7 +537,7 @@ body #areacol::before {
   font-size: calc(var(--fontsize) * 2);
 }
 
-#enearea #playarea #playbutton::before {
+#opparea #playarea #playbutton::before {
   content: 'play';
   position: absolute;
   top: 50%;
@@ -545,12 +545,12 @@ body #areacol::before {
           transform: translateX(-50%) translateY(-50%);
 }
 
-#enearea #playarea #playbutton:active {
+#opparea #playarea #playbutton:active {
   -webkit-filter: saturate(80%);
           filter: saturate(80%);
 }
 
-#mystatus, #mydata, #log, #enedata, #enestatus {
+#mystatus, #mydata, #log, #oppdata, #oppstatus {
   background: var(--backgroundcolor);
 }
 /*# sourceMappingURL=css.css.map */
