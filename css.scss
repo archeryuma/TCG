@@ -334,9 +334,12 @@ body {//全体設定
       background-color: rgb(100,100,100);
       border: 1px var(--maincolor) solid;
       box-sizing: border-box;
+      &:active{
+        filter: saturate(80%);
+      }
     }
     #mycard03{
-      background-color: aqua;
+      background-color: orangered;
     }
   }
 }
@@ -426,7 +429,7 @@ body {//全体設定
       margin: var(--margin);
       padding: var(--padding);
       border-radius: 50%;
-      background-color: red;
+      background-color: orangered;
       border: 5px var(--maincolor) solid;
       box-sizing: border-box;
       text-align: center;
@@ -436,6 +439,9 @@ body {//全体設定
         position: absolute;
         top: 50%;
         transform: translateX(-50%) translateY(-50%);
+      }
+      &:active{
+        filter: saturate(80%);
       }
     }
   }

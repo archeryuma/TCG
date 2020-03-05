@@ -408,8 +408,13 @@ body #areacol::before {
           box-sizing: border-box;
 }
 
+#mainarea #mydeck .mycard:active {
+  -webkit-filter: saturate(80%);
+          filter: saturate(80%);
+}
+
 #mainarea #mydeck #mycard03 {
-  background-color: aqua;
+  background-color: orangered;
 }
 
 #enearea {
@@ -520,7 +525,7 @@ body #areacol::before {
   margin: var(--margin);
   padding: var(--padding);
   border-radius: 50%;
-  background-color: red;
+  background-color: orangered;
   border: 5px var(--maincolor) solid;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -534,6 +539,11 @@ body #areacol::before {
   top: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
+}
+
+#enearea #playarea #playbutton:active {
+  -webkit-filter: saturate(80%);
+          filter: saturate(80%);
 }
 
 #mystatus, #mydata, #log, #enedata, #enestatus {
