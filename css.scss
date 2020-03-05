@@ -108,10 +108,12 @@ body {//全体設定
     input[name='mytabs']{//ラジオボタン消去
       display: none;
     }
-    .tabscontent{//非表示
+    .tabscontent{//スタイル&非表示
       grid-area: contents;
-      display: none;
+      width: auto;
+      height: auto;
       padding: var(--padding);
+      display: none;
       clear: both;
       overflow: hidden;
     }
@@ -398,10 +400,12 @@ body {//全体設定
     input[name='enetabs']{//ラジオボタン消去
       display: none;
     }
-    .tabscontent{//非表示
+    .tabscontent{//スタイル&非表示
       grid-area: contents;
-      display: none;
+      width: auto;
+      height: auto;
       padding: var(--padding);
+      display: none;
       clear: both;
       overflow: hidden;
     }

@@ -131,8 +131,10 @@ body #areacol::before {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: contents;
-  display: none;
+  width: auto;
+  height: auto;
   padding: var(--padding);
+  display: none;
   clear: both;
   overflow: hidden;
 }
@@ -490,8 +492,10 @@ body #areacol::before {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: contents;
-  display: none;
+  width: auto;
+  height: auto;
   padding: var(--padding);
+  display: none;
   clear: both;
   overflow: hidden;
 }
