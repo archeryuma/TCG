@@ -1,0 +1,457 @@
+:root{//定義・宣言
+  --backgroundcolor: black;
+  --maincolor: white;
+  --fontsize: 2vw;
+  --margin: 1.5%;
+  --padding: 1.5%;
+  --cardradius: 10%;
+  --mydeckcards: 15;//プレイヤーデッキカード枚数
+  --enedeckcards: 15;//敵デッキカード枚数
+  --mynowhp: 56789;
+  --enenowhp: 34567;
+  --hpcolor1: rgb(255, 0, 0);
+  --hpcolor2: rgb(255, 100, 0);
+  --hpcolor3: rgb(255, 200, 0);
+  --hpcolor4: rgb(255, 255, 0);
+  --hpcolor5: rgb(100, 255, 100);
+  --hpcolor6: rgb(0, 255, 255);
+  --hpcolor7: rgb(0, 100, 255);
+  --hpcolor8: rgb(100, 50, 150);
+  --hpcolor9: rgb(200, 200, 200);
+  --hpcolor10: rgb(100, 100, 100);
+  --hpcolor11: rgb(50, 50, 50);
+}
+*{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  color: var(--maincolor);
+  font-family: serif;
+  font-weight: bolder;
+  font-size: var(--fontsize);
+}
+
+
+
+body {//全体設定
+  width: 100%;
+  height: 62.5vw;
+  max-height: 100%;
+  max-width: 160vh;
+  background: var(--backgroundcolor);
+  background-size: 100% 100%;
+  margin: auto;
+  #areacol {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 20% 1fr 20%;
+    &::before{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url("images/background-digital.jpg");
+      background-size: 100% 100%;
+      filter: grayscale(60%);
+    }
+  }
+}
+
+
+
+#myarea{//左エリア
+  display: grid;
+  grid-template-rows: 10% 1fr 17%;
+  #option{
+    width: auto;
+    height: auto;
+    margin: 0 var(--margin) var(--margin) 0;
+    padding: var(--padding);
+    display: grid;
+  }
+
+  #mystatus{
+    width: auto;
+    height: auto;
+    margin: var(--margin) var(--margin) 0 0;
+    border: 1px var(--maincolor) solid;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10% 1fr;
+    grid-template-areas: "times effects" "contents contents";
+    .timestabs{//timesタブのスタイル
+      border: 1px var(--maincolor) solid;
+      text-align: center;
+      &::before{
+        content: 'times';
+        position: absolute;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+    .effectstabs{//effectsタブのスタイル
+      border: 1px var(--maincolor) solid;
+      text-align: center;
+      &::before{
+        content: 'effects';
+        position: absolute;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+    // .tabs:hover{
+      
+    // }
+    input[name='mytabs']{//ラジオボタン消去
+      display: none;
+    }
+    .tabscontent{//スタイル&非表示
+      grid-area: contents;
+      width: auto;
+      height: auto;
+      padding: var(--padding);
+      display: none;
+      clear: both;
+      overflow: hidden;
+    }
+    #mytimes:checked ~ #mytimescontent,
+    #myeffects:checked ~ #myeffectscontent{//選択中のみ表示
+      display: block;
+    }
+    input:checked + .timestabs,
+    input:checked + .effectstabs{//選択中のスタイル
+      border-bottom: none;
+    }
+  }
+
+  #mydata{
+    width: auto;
+    height: auto;
+    margin: 0 var(--margin) 0 0;
+    padding: var(--padding);
+    border: 1px var(--maincolor) solid;
+    box-sizing: border-box;
+    p{
+      height: 1em;
+      border: 0;
+    }
+  }
+}
+
+
+
+#mainarea{//中央エリア
+  display: grid;
+  grid-template-rows: 10% 4% 1fr 4% 20%;
+  #enedeck{
+    width: auto;
+    height: auto;
+    margin: 0 var(--margin) var(--margin) var(--margin);
+    display: grid;
+    grid-template-columns: repeat(var(--enedeckcards), calc(100% / var(--enedeckcards)));
+    .enecard{
+      width: 130%;
+      border-radius: 0 0 var(--cardradius) var(--cardradius);
+      background-color: rgb(100,100,100);
+      border: 1px var(--maincolor) solid;
+      box-sizing: border-box;
+    }
+    #enecard05{
+      background-color: greenyellow;
+    }
+  }
+
+  #enehp{
+    width: auto;
+    margin: 0 var(--margin) 0 var(--margin);
+    border: 1px var(--maincolor) solid;
+    box-sizing: border-box;
+    div{position: absolute;}
+    #enehpbar1{
+      width: calc(0.01% * (var(--enenowhp) - 0));
+      max-width: 100%;
+      background-color: var(--hpcolor1);
+    }
+    #enehpbar2{
+      width: calc(0.01% * (var(--enenowhp) - 10000));
+      max-width: 100%;
+      background-color: var(--hpcolor2);
+    }
+    #enehpbar3{
+      width: calc(0.01% * (var(--enenowhp) - 20000));
+      max-width: 100%;
+      background-color: var(--hpcolor3);
+    }
+    #enehpbar4{
+      width: calc(0.01% * (var(--enenowhp) - 30000));
+      max-width: 100%;
+      background-color: var(--hpcolor4);
+    }
+    #enehpbar5{
+      width: calc(0.01% * (var(--enenowhp) - 40000));
+      max-width: 100%;
+      background-color: var(--hpcolor5);
+    }
+    #enehpbar6{
+      width: calc(0.01% * (var(--enenowhp) - 50000));
+      max-width: 100%;
+      background-color: var(--hpcolor6);
+    }
+    #enehpbar7{
+      width: calc(0.01% * (var(--enenowhp) - 60000));
+      max-width: 100%;
+      background-color: var(--hpcolor7);
+    }
+    #enehpbar8{
+      width: calc(0.01% * (var(--enenowhp) - 70000));
+      max-width: 100%;
+      background-color: var(--hpcolor8);
+    }
+    #enehpbar9{
+      width: calc(0.01% * (var(--enenowhp) - 80000));
+      max-width: 100%;
+      background-color: var(--hpcolor9);
+    }
+    #enehpbar10{
+      width: calc(0.01% * (var(--enenowhp) - 90000));
+      max-width: 100%;
+      background-color: var(--hpcolor10);
+    }
+    #enehpbar11{
+      width: calc(0.01% * (var(--enenowhp) - 100000));
+      max-width: 100%;
+      background-color: var(--hpcolor11);
+    }
+    #enehptext{
+      color: black;
+    }
+  }
+
+  #log{
+    width: auto;
+    height: auto;
+    margin: var(--margin);
+    padding: var(--padding);
+    border: 1px var(--maincolor) solid;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    #mylog{
+      width: 50%;
+      height: auto;
+      position: absolute;
+    }
+    #enelog{
+      width: 50%;
+      height: auto;
+      position: absolute;
+      transform: translateX(100%);
+    }
+    #commonlog{
+      height: auto;
+      position: absolute;
+    }
+  }
+
+  #myhp{
+    width: auto;
+    margin: 0 var(--margin) 0 var(--margin);
+    border: 1px var(--maincolor) solid;
+    box-sizing: border-box;
+    div{position: absolute;}
+    #myhpbar1{
+      width: calc(0.01% * (var(--mynowhp) - 0));
+      max-width: 100%;
+      background-color: var(--hpcolor1);
+    }
+    #myhpbar2{
+      width: calc(0.01% * (var(--mynowhp) - 10000));
+      max-width: 100%;
+      background-color: var(--hpcolor2);
+    }
+    #myhpbar3{
+      width: calc(0.01% * (var(--mynowhp) - 20000));
+      max-width: 100%;
+      background-color: var(--hpcolor3);
+    }
+    #myhpbar4{
+      width: calc(0.01% * (var(--mynowhp) - 30000));
+      max-width: 100%;
+      background-color: var(--hpcolor4);
+    }
+    #myhpbar5{
+      width: calc(0.01% * (var(--mynowhp) - 40000));
+      max-width: 100%;
+      background-color: var(--hpcolor5);
+    }
+    #myhpbar6{
+      width: calc(0.01% * (var(--mynowhp) - 50000));
+      max-width: 100%;
+      background-color: var(--hpcolor6);
+    }
+    #myhpbar7{
+      width: calc(0.01% * (var(--mynowhp) - 60000));
+      max-width: 100%;
+      background-color: var(--hpcolor7);
+    }
+    #myhpbar8{
+      width: calc(0.01% * (var(--mynowhp) - 70000));
+      max-width: 100%;
+      background-color: var(--hpcolor8);
+    }
+    #myhpbar9{
+      width: calc(0.01% * (var(--mynowhp) - 80000));
+      max-width: 100%;
+      background-color: var(--hpcolor9);
+    }
+    #myhpbar10{
+      width: calc(0.01% * (var(--mynowhp) - 90000));
+      max-width: 100%;
+      background-color: var(--hpcolor10);
+    }
+    #myhpbar11{
+      width: calc(0.01% * (var(--mynowhp) - 100000));
+      max-width: 100%;
+      background-color: var(--hpcolor11);
+    }
+    #myhptext{
+      color: black;
+    }
+  }
+
+  #mydeck{
+    width: auto;
+    height: auto;
+    margin: var(--margin) var(--margin) 0 var(--margin);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: grid;
+    grid-template-columns: repeat(var(--mydeckcards), 10%);
+    .mycard{
+      width: 150%;
+      border-radius: var(--cardradius) var(--cardradius) 0 0;
+      background-color: rgb(100,100,100);
+      border: 1px var(--maincolor) solid;
+      box-sizing: border-box;
+      &:active{
+        filter: saturate(80%);
+      }
+    }
+    #mycard03{
+      background-color: orangered;
+    }
+  }
+}
+
+
+
+#enearea{//右エリア
+  display: grid;
+  grid-template-rows: 17% 1fr 20%;
+  #enedata{
+    width: auto;
+    height: auto;
+    margin: 0 0 0 var(--margin);
+    padding: var(--padding);
+    border: 1px var(--maincolor) solid;
+    box-sizing: border-box;
+    p{
+      height: 1em;
+      border: 0;
+    }
+  }
+
+  #enestatus{
+    width: auto;
+    height: auto;
+    margin: 0 0 var(--margin) var(--margin);
+    border: 1px var(--maincolor) solid;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 12% 1fr;
+    grid-template-areas: "times effects" "contents contents";
+    .timestabs{//timesタブのスタイル
+      border: 1px var(--maincolor) solid;
+      text-align: center;
+      &::before{
+        content: 'times';
+        position: absolute;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+    .effectstabs{//effectsタブのスタイル
+      border: 1px var(--maincolor) solid;
+      text-align: center;
+      &::before{
+        content: 'effects';
+        position: absolute;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+    // .tabs:hover{
+      
+    // }
+    input[name='enetabs']{//ラジオボタン消去
+      display: none;
+    }
+    .tabscontent{//スタイル&非表示
+      grid-area: contents;
+      width: auto;
+      height: auto;
+      padding: var(--padding);
+      display: none;
+      clear: both;
+      overflow: hidden;
+    }
+    #enetimes:checked ~ #enetimescontent,
+    #eneeffects:checked ~ #eneeffectscontent{//選択中のみ表示
+      display: block;
+    }
+    input:checked + .timestabs,
+    input:checked + .effectstabs{//選択中のスタイル
+      border-bottom: none;
+    }
+  }
+
+  #playarea{
+    display: grid;
+    grid-template-columns: 1fr 65%;
+    #cparea{
+      padding: var(--padding);
+      text-align: center;
+      font-size: calc(var(--fontsize) * 2);
+    }
+    #playbutton{
+      width: auto;
+      height: auto;
+      margin: var(--margin);
+      padding: var(--padding);
+      border-radius: 50%;
+      background-color: orangered;
+      border: 5px var(--maincolor) solid;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: calc(var(--fontsize) * 2);
+      &::before{
+        content: 'play';
+        position: absolute;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+      &:active{
+        filter: saturate(80%);
+      }
+    }
+  }
+}
+
+
+#mystatus, #mydata, #log, #enedata, #enestatus{//ログ背景黒転
+  background: var(--backgroundcolor);
+}

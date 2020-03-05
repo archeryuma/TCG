@@ -3,31 +3,77 @@
         <link rel="stylesheet" type="text/css" media="screen" href="css.css">
 </head>
 <body>
-    <div class="areacol">
-        <div class="myarea">
-            <div class="option">option</div>
-            <div class="mylog">mylog</div>
-            <div class="mydata">mydata
+    <div id="areacol">
+        <div id="myarea">
+            <div id="option">option</div>
+            <div id="mystatus">
+                <input id="mytimes" type="radio" name="mytabs" checked>
+                <label for="mytimes" class="timestabs"></label>
+                <input id="myeffects" type="radio" name="mytabs">
+                <label for="myeffects" class="effectstabs"></label>
+                <div class="tabscontent" id="mytimescontent">
+                    times
+                </div>
+                <div class="tabscontent" id="myeffectscontent">
+                    effects
+                </div>
+            </div>
+            <div id="mydata">mydata
                 <p>power</p>
                 <p>times</p>
                 <p>attack</p>
             </div>
         </div>
-        <div class="mainarea">
-            <div class="enedeck">enedeck</div>
-            <div class="enehp">enehp</div>
-            <div class="alllog">goodmorning!!</div>
-            <div class="myhp">myhp</div>
-            <div class="mydeck">
-                <!--<div class="par_card">
-                    <div class="chi_card">1</div>
-                </div>
-                <div class="par_card">
-                    <div class="chi_card">1</div>
-                </div>
-                <div class="par_card">
-                    <div class="chi_card">1</div>
-                </div>-->
+        <div id="mainarea">
+            <div id="enedeck">
+                <div class="enecard" id="enecard01">01</div>
+                <div class="enecard" id="enecard02">02</div>
+                <div class="enecard" id="enecard03">03</div>
+                <div class="enecard" id="enecard04">04</div>
+                <div class="enecard" id="enecard05">05</div>
+                <div class="enecard" id="enecard06">06</div>
+                <div class="enecard" id="enecard07">07</div>
+                <div class="enecard" id="enecard08">08</div>
+                <div class="enecard" id="enecard09">09</div>
+                <div class="enecard" id="enecard10">10</div>
+                <div class="enecard" id="enecard11">11</div>
+                <div class="enecard" id="enecard12">12</div>
+                <div class="enecard" id="enecard13">13</div>
+                <div class="enecard" id="enecard14">14</div>
+                <div class="enecard" id="enecard15">15</div>
+            </div>
+            <div id="enehp">
+                <div class="enehpbar" id="enehpbar1"></div>
+                <div class="enehpbar" id="enehpbar2"></div>
+                <div class="enehpbar" id="enehpbar3"></div>
+                <div class="enehpbar" id="enehpbar4"></div>
+                <div class="enehpbar" id="enehpbar5"></div>
+                <div class="enehpbar" id="enehpbar6"></div>
+                <div class="enehpbar" id="enehpbar7"></div>
+                <div class="enehpbar" id="enehpbar8"></div>
+                <div class="enehpbar" id="enehpbar9"></div>
+                <div class="enehpbar" id="enehpbar10"></div>
+                <div id="enehptext">34567/50000</div>
+            </div>
+            <div id="log">
+                <div id="mylog"></div>
+                <div id="enelog"></div>
+                <div id="commonlog"></div>
+            </div>
+            <div id="myhp">
+                <div class="myhpbar" id="myhpbar1"></div>
+                <div class="myhpbar" id="myhpbar2"></div>
+                <div class="myhpbar" id="myhpbar3"></div>
+                <div class="myhpbar" id="myhpbar4"></div>
+                <div class="myhpbar" id="myhpbar5"></div>
+                <div class="myhpbar" id="myhpbar6"></div>
+                <div class="myhpbar" id="myhpbar7"></div>
+                <div class="myhpbar" id="myhpbar8"></div>
+                <div class="myhpbar" id="myhpbar9"></div>
+                <div class="myhpbar" id="myhpbar10"></div>
+                <div id="myhptext">56789/60000</div>
+            </div>
+            <div id="mydeck">
                 <div class="mycard" id="mycard01">01</div>
                 <div class="mycard" id="mycard02">02</div>
                 <div class="mycard" id="mycard03">03</div>
@@ -45,16 +91,27 @@
                 <div class="mycard" id="mycard15">15</div>
             </div>
         </div>
-        <div class="enearea">
-            <div class="enedata">enedata
+        <div id="enearea">
+            <div id="enedata">enedata
                 <p>power</p>
                 <p>times</p>
                 <p>attack</p>
             </div>
-            <div class="enelog">enelog</div>
-            <div class="playarea">
-                <span class="cparea">cp</span>
-                <div class="playbutton">play</div>
+            <div id="enestatus">
+                <input id="enetimes" type="radio" name="enetabs" checked>
+                <label for="enetimes" class="timestabs"></label>
+                <input id="eneeffects" type="radio" name="enetabs">
+                <label for="eneeffects" class="effectstabs"></label>
+                <div class="tabscontent" id="enetimescontent">
+                    times
+                </div>
+                <div class="tabscontent" id="eneeffectscontent">
+                    effects
+                </div>
+            </div>
+            <div id="playarea">
+                <span id="cparea">cp</span>
+                <div id="playbutton"></div>
             </div>
         </div>
     </div>
