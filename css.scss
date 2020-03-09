@@ -1,7 +1,6 @@
 :root{//定義・宣言
   --backgroundcolor: black;
   --maincolor: white;
-  --fontsize: 2vw;
   --margin: 1.5%;
   --padding: 1.5%;
   --cardradius: 10%;
@@ -30,7 +29,7 @@
   color: var(--maincolor);
   font-family: serif;
   font-weight: bolder;
-  font-size: var(--fontsize);
+  font-size: 2vw;
 }
 
 
@@ -38,6 +37,7 @@
 body {//全体設定
   width: 100%;
   height: 62.5vw;
+  min-height: calc(3vw / 8);
   max-height: 100%;
   max-width: 160vh;
   background: var(--backgroundcolor);
@@ -425,7 +425,7 @@ body {//全体設定
     #cparea{
       padding: var(--padding);
       text-align: center;
-      font-size: calc(var(--fontsize) * 2);
+      font-size: 2rem;
     }
     #playbutton{
       width: auto;
@@ -437,7 +437,7 @@ body {//全体設定
       border: 5px var(--maincolor) solid;
       box-sizing: border-box;
       text-align: center;
-      font-size: calc(var(--fontsize) * 2);
+      font-size: 2rem;
       &::before{
         content: 'play';
         position: absolute;
