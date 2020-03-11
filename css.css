@@ -57,7 +57,7 @@ body {
   height: 1em;
   border: 0;
 }
-.mylog{
+.myog{
   
 }
 .myselect{
@@ -74,7 +74,7 @@ body {
   box-sizing: border-box;
   overflow-y: scroll;
 }
-.mydeck{
+#myDeck{
   overflow-x: scroll;
   display: grid;
   grid-template-columns: repeat(15, 10%);
@@ -97,7 +97,7 @@ body {
   top: 0; bottom: 0; left: 0; right: 0;
   margin: auto; */
 }
-.playbutton{
+#playButton{
 
 }
 

@@ -1,0 +1,30 @@
+To Archer From Seizya.
+
+Systemとの整合性のため一部HTMLを改変しました。
+
+必ず `<script type="module" src="./Src/index.js">` を head 内で読み込んでください。
+
+Deck は `id="myDeck"` を持った要素であってください。
+Deck を構成する各カードは 上記要素の子供の div要素 であってください。
+```
+<div id="myDeck">
+    <div></div>
+    ・・・
+    <div></div>
+</div>
+```
+
+ターンを開始する PlayButton は, `id="PlayButton"` を持った要素であってください。
+```
+<div class="playButton">play</div>
+```
+
+Log は `id="log"` を持った要素に `class="myLog"` `class="oppLog"` `class="commonLog"` を持ったdiv要素として *動的に* 追加されます。
+```
+<div id="log">
+    <div class="myLog"></div>
+    <div class="oppLog"></div>
+    <div class="commonLog"></div>
+    ・・・
+</div>
+```
