@@ -36,7 +36,7 @@ import {} from "../Config/System/effect.js"
         main.start()
     });
     //BOT TEST-------
-    getElement(".enelog")[0].addEventListener("click", () => {
+    getElement("#cpArea")[0].addEventListener("click", () => {
         opponent.ready();
         main.start()
     });

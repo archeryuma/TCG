@@ -2,35 +2,82 @@
 
 <head>
     <link rel="stylesheet" type="text/css" media="screen" href="css.css">
-    <script type="module" src="Src/index.js"></script>
+    <script type="module" src="./Src/index.js"></script>
 </head>
 
 <body>
-    <div class="areacol">
-        <div class="myarea">
-            <div class="option">option</div>
-            <div class="mylog">mylog</div>
-            <div class="mydata">mydata
+    <div id="areacol">
+        <div id="myarea">
+            <div id="option">option</div>
+            <div id="mystatus">
+                <input id="mytimes" type="radio" name="mytabs" checked>
+                <label for="mytimes" class="timestabs"></label>
+                <input id="myeffects" type="radio" name="mytabs">
+                <label for="myeffects" class="effectstabs"></label>
+                <div class="tabscontent" id="mytimescontent">
+                    times
+                </div>
+                <div class="tabscontent" id="myeffectscontent">
+                    effects
+                </div>
+            </div>
+            <div id="mydata">
+                <p>myname</p>
                 <p>power</p>
                 <p>times</p>
                 <p>attack</p>
             </div>
         </div>
-        <div class="mainarea">
-            <div class="enedeck">enedeck</div>
-            <div class="enehp">enehp</div>
-            <div class="log">goodmorning!!</div>
-            <div class="myhp">myhp</div>
+        <div id="mainarea">
+            <div id="oppdeck">
+                <div class="oppcard" id="oppcard01">01</div>
+                <div class="oppcard" id="oppcard02">02</div>
+                <div class="oppcard" id="oppcard03">03</div>
+                <div class="oppcard" id="oppcard04">04</div>
+                <div class="oppcard" id="oppcard05">05</div>
+                <div class="oppcard" id="oppcard06">06</div>
+                <div class="oppcard" id="oppcard07">07</div>
+                <div class="oppcard" id="oppcard08">08</div>
+                <div class="oppcard" id="oppcard09">09</div>
+                <div class="oppcard" id="oppcard10">10</div>
+                <div class="oppcard" id="oppcard11">11</div>
+                <div class="oppcard" id="oppcard12">12</div>
+                <div class="oppcard" id="oppcard13">13</div>
+                <div class="oppcard" id="oppcard14">14</div>
+                <div class="oppcard" id="oppcard15">15</div>
+            </div>
+            <div id="opphp">
+                <div class="opphpbar" id="opphpbar1"></div>
+                <div class="opphpbar" id="opphpbar2"></div>
+                <div class="opphpbar" id="opphpbar3"></div>
+                <div class="opphpbar" id="opphpbar4"></div>
+                <div class="opphpbar" id="opphpbar5"></div>
+                <div class="opphpbar" id="opphpbar6"></div>
+                <div class="opphpbar" id="opphpbar7"></div>
+                <div class="opphpbar" id="opphpbar8"></div>
+                <div class="opphpbar" id="opphpbar9"></div>
+                <div class="opphpbar" id="opphpbar10"></div>
+                <div id="opphptext">34567/50000</div>
+            </div>
+            <div id="log">
+                <div id="mylog"></div>
+                <div id="opplog"></div>
+                <div id="commonlog"></div>
+            </div>
+            <div id="myhp">
+                <div class="myhpbar" id="myhpbar1"></div>
+                <div class="myhpbar" id="myhpbar2"></div>
+                <div class="myhpbar" id="myhpbar3"></div>
+                <div class="myhpbar" id="myhpbar4"></div>
+                <div class="myhpbar" id="myhpbar5"></div>
+                <div class="myhpbar" id="myhpbar6"></div>
+                <div class="myhpbar" id="myhpbar7"></div>
+                <div class="myhpbar" id="myhpbar8"></div>
+                <div class="myhpbar" id="myhpbar9"></div>
+                <div class="myhpbar" id="myhpbar10"></div>
+                <div id="myhptext">56789/60000</div>
+            </div>
             <div id="myDeck">
-                <!--<div class="par_card">
-                    <div class="chi_card">1</div>
-                </div>
-                <div class="par_card">
-                    <div class="chi_card">1</div>
-                </div>
-                <div class="par_card">
-                    <div class="chi_card">1</div>
-                </div>-->
                 <div class="mycard" id="mycard01">01</div>
                 <div class="mycard" id="mycard02">02</div>
                 <div class="mycard" id="mycard03">03</div>
@@ -48,16 +95,28 @@
                 <div class="mycard" id="mycard15">15</div>
             </div>
         </div>
-        <div class="enearea">
-            <div class="enedata">enedata
+        <div id="opparea">
+            <div id="oppdata">
+                <p>oppname</p>
                 <p>power</p>
                 <p>times</p>
                 <p>attack</p>
             </div>
-            <div class="enelog">enelog</div>
-            <div class="playarea">
-                <span class="cparea">cp</span>
-                <div id="playButton">play</div>
+            <div id="oppstatus">
+                <input id="opptimes" type="radio" name="opptabs" checked>
+                <label for="opptimes" class="timestabs"></label>
+                <input id="oppeffects" type="radio" name="opptabs">
+                <label for="oppeffects" class="effectstabs"></label>
+                <div class="tabscontent" id="opptimescontent">
+                    times
+                </div>
+                <div class="tabscontent" id="oppeffectscontent">
+                    effects
+                </div>
+            </div>
+            <div id="playarea">
+                <span id="cpArea">cp</span>
+                <div id="playButton"></div>
             </div>
         </div>
     </div>
